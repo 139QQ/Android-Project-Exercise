@@ -1,8 +1,11 @@
 package com.lzok.materialdesign;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.graphics.Color;
 import android.os.Build;
@@ -11,10 +14,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,13 +26,17 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle("这是ToolBar");
 
         setSupportActionBar(toolbar);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar !=null){
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+            supportActionBar.setHomeAsUpIndicator(R.drawable.menu_icon);
+        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.setStatusBarColor(Color.WHITE);
             window.getDecorView().setSystemUiVisibility(
                     View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(Color.TRANSPARENT);
         }
 
     }
@@ -46,8 +53,11 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "You clicked Backup", Toast.LENGTH_SHORT).show();
         }else if (item.getItemId() == R.id.delete){
             Toast.makeText(this, "You clicked delete", Toast.LENGTH_SHORT).show();
-        }else {
+        }else if (item.getItemId() == R.id.setting){
             Toast.makeText(this, "You clicked settings", Toast.LENGTH_SHORT).show();
+        }else {
+            drawerLayout.openDrawer(GravityCompat.START);
+
         }
         return true;
 

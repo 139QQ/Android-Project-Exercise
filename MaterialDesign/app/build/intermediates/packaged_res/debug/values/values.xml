@@ -6,6 +6,7 @@
     <string name="backup">上传</string>
     <string name="delete">删除</string>
     <string name="settings">设置</string>
+    <string name="thisismenu">这是菜单</string>
     <style name="Base.Theme.MaterialDesign" parent="Theme.Material3.DayNight.NoActionBar">
         
         
