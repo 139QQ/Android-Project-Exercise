@@ -16,7 +16,6 @@ string app_name
 string backup
 string delete
 string settings
-string test
 style Base.Theme.MaterialDesign
 style Theme.MaterialDesign
 xml backup_rules

@@ -3,10 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">MaterialDesign</string>
-    <string name="backup">Backup</string>
-    <string name="delete">Delete</string>
-    <string name="settings">Settings</string>
-    <string name="test">实先沉浸状态栏</string>
+    <string name="backup">上传</string>
+    <string name="delete">删除</string>
+    <string name="settings">设置</string>
     <style name="Base.Theme.MaterialDesign" parent="Theme.Material3.DayNight.NoActionBar">
         
         

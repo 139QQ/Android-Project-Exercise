@@ -703,27 +703,6 @@ attr listPreferredItemPaddingRight
 attr listPreferredItemPaddingStart
 attr logo
 attr logoDescription
-attr lottieAnimationViewStyle
-attr lottie_asyncUpdates
-attr lottie_autoPlay
-attr lottie_cacheComposition
-attr lottie_clipToCompositionBounds
-attr lottie_colorFilter
-attr lottie_defaultFontFileExtension
-attr lottie_enableMergePathsForKitKatAndAbove
-attr lottie_fallbackRes
-attr lottie_fileName
-attr lottie_ignoreDisabledSystemAnimations
-attr lottie_imageAssetsFolder
-attr lottie_loop
-attr lottie_progress
-attr lottie_rawRes
-attr lottie_renderMode
-attr lottie_repeatCount
-attr lottie_repeatMode
-attr lottie_speed
-attr lottie_url
-attr lottie_useCompositionFrameRate
 attr marginHorizontal
 attr materialAlertDialogBodyTextStyle
 attr materialAlertDialogButtonSpacerVisibility
@@ -2609,7 +2588,6 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
-id automatic
 id backup
 id barrier
 id baseline
@@ -2683,7 +2661,6 @@ id disableHome
 id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
-id disabled
 id disjoint
 id dragAnticlockwise
 id dragClockwise
@@ -2700,7 +2677,6 @@ id easeOut
 id east
 id edit_query
 id elastic
-id enabled
 id end
 id endToStart
 id enterAlways
@@ -2729,7 +2705,6 @@ id group_divider
 id grouping
 id groups
 id guideline
-id hardware
 id header_title
 id hideable
 id home
@@ -2748,6 +2723,10 @@ id info
 id invisible
 id inward
 id italic
+id item1
+id item2
+id item3
+id item4
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
@@ -2761,7 +2740,6 @@ id line3
 id linear
 id listMode
 id list_item
-id lottie_layer_name
 id masked
 id match_constraint
 id match_parent
@@ -2862,8 +2840,6 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
-id restart
-id reverse
 id reverseSawtooth
 id right
 id rightToLeft
@@ -2909,7 +2885,6 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
-id software
 id south
 id spacer
 id special_effects_controller_view_tag
@@ -2993,7 +2968,6 @@ id vertical_only
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
-id view_tree_on_back_pressed_dispatcher_owner
 id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
@@ -3180,6 +3154,8 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+menu example_menu
+menu example_menu2
 menu toolbar
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -3319,7 +3295,6 @@ string path_password_strike_through
 string search_menu_title
 string settings
 string status_bar_notification_info_overflow
-string test
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
@@ -4416,7 +4391,6 @@ styleable LinearLayoutCompat android_gravity android_orientation android_baselin
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable LinearProgressIndicator indeterminateAnimationType indicatorDirectionLinear
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
-styleable LottieAnimationView lottie_asyncUpdates lottie_autoPlay lottie_cacheComposition lottie_clipToCompositionBounds lottie_colorFilter lottie_defaultFontFileExtension lottie_enableMergePathsForKitKatAndAbove lottie_fallbackRes lottie_fileName lottie_ignoreDisabledSystemAnimations lottie_imageAssetsFolder lottie_loop lottie_progress lottie_rawRes lottie_renderMode lottie_repeatCount lottie_repeatMode lottie_speed lottie_url lottie_useCompositionFrameRate
 styleable MaterialAlertDialog backgroundInsetBottom backgroundInsetEnd backgroundInsetStart backgroundInsetTop
 styleable MaterialAlertDialogTheme materialAlertDialogBodyTextStyle materialAlertDialogButtonSpacerVisibility materialAlertDialogTheme materialAlertDialogTitleIconStyle materialAlertDialogTitlePanelStyle materialAlertDialogTitleTextStyle
 styleable MaterialAutoCompleteTextView android_inputType
