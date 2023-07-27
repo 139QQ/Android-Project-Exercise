@@ -10,6 +10,7 @@ id delete
 id drawer_layout
 id materialToolbar
 id setting
+id texts
 layout activity_main
 menu toolbar
 mipmap ic_launcher

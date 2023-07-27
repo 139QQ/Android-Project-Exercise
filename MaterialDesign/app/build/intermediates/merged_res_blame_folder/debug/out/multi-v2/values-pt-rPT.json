@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.lzok.materialdesign.app-mergeDebugResources-22:/values-pt-rPT/values-pt-rPT.xml",
+            "outputFile": "com.lzok.materialdesign.app-mergeDebugResources-36:/values-pt-rPT/values-pt-rPT.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\64c4fc550d11a35f84690b0b0a7c0793\\transformed\\core-1.8.0\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "88",
+                        "startColumns": "4",
+                        "startOffsets": "7528",
+                        "endColumns": "100",
+                        "endOffsets": "7624"
+                    }
+                },
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\d857d0ade5f86bfb30bb8261a110709d\\transformed\\material-1.5.0\\res\\values-pt-rPT\\values-pt-rPT.xml",
                     "from": {
@@ -37,23 +54,6 @@
                         "startOffsets": "278,386,492,599,688,789,907,992,1072,1164,1258,1355,1449,1548,1642,1738,1833,1925,2017,2102,2209,2320,2422,2530,2638,2745,2910,7442",
                         "endColumns": "107,105,106,88,100,117,84,79,91,93,96,93,98,93,95,94,91,91,84,106,110,101,107,107,106,164,98,85",
                         "endOffsets": "381,487,594,683,784,902,987,1067,1159,1253,1350,1444,1543,1637,1733,1828,1920,2012,2097,2204,2315,2417,2525,2633,2740,2905,3004,7523"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\1726753fdf841cd08f0aeb38911b4117\\transformed\\core-1.7.0\\res\\values-pt-rPT\\values-pt-rPT.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "88",
-                        "startColumns": "4",
-                        "startOffsets": "7528",
-                        "endColumns": "100",
-                        "endOffsets": "7624"
                     }
                 }
             ]

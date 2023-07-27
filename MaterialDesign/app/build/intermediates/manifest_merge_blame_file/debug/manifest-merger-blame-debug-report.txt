@@ -15,7 +15,7 @@
 12        android:allowBackup="true"
 12-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.7.0] C:\Users\Administrator\.gradle\caches\transforms-3\1726753fdf841cd08f0aeb38911b4117\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.8.0] C:\Users\Administrator\.gradle\caches\transforms-3\64c4fc550d11a35f84690b0b0a7c0793\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
 14        android:dataExtractionRules="@xml/data_extraction_rules"
 14-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:7:9-65
 15        android:debuggable="true"
@@ -72,6 +72,19 @@
 43                android:value="androidx.startup" />
 43-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Administrator\.gradle\caches\transforms-3\f706b7a7d495a8426cc74148c10ea1c2\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
 44        </provider>
-45    </application>
-46
-47</manifest>
+45
+46        <uses-library
+46-->[androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\a4dfbfc4eeb2d60c4ba54625ae8e29c5\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+47            android:name="androidx.window.extensions"
+47-->[androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\a4dfbfc4eeb2d60c4ba54625ae8e29c5\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+48            android:required="false" />
+48-->[androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\a4dfbfc4eeb2d60c4ba54625ae8e29c5\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+49        <uses-library
+49-->[androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\a4dfbfc4eeb2d60c4ba54625ae8e29c5\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+50            android:name="androidx.window.sidecar"
+50-->[androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\a4dfbfc4eeb2d60c4ba54625ae8e29c5\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+51            android:required="false" />
+51-->[androidx.window:window:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\a4dfbfc4eeb2d60c4ba54625ae8e29c5\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+52    </application>
+53
+54</manifest>

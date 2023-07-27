@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.lzok.materialdesign.app-mergeDebugResources-22:/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "com.lzok.materialdesign.app-mergeDebugResources-36:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\ad20d193776a9414b5cc664bee7312b5\\transformed\\appcompat-1.4.1\\res\\values-en-rXC\\values-en-rXC.xml",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\1726753fdf841cd08f0aeb38911b4117\\transformed\\core-1.7.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\64c4fc550d11a35f84690b0b0a7c0793\\transformed\\core-1.8.0\\res\\values-en-rXC\\values-en-rXC.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
