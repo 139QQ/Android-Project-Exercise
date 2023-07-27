@@ -22,16 +22,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        获取顶部导航栏id
         Toolbar toolbar = findViewById(R.id.materialToolbar);
+//        设置toolbar的标题
         toolbar.setTitle("这是ToolBar");
-
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
+
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar !=null){
             supportActionBar.setDisplayHomeAsUpEnabled(true);
-            supportActionBar.setHomeAsUpIndicator(R.drawable.menu_icon);
+            supportActionBar.setHomeAsUpIndicator(R.drawable.ic_launcher_foreground);
+
         }
+//        设置状态栏透明
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
             window.setStatusBarColor(Color.WHITE);
