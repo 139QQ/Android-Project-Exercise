@@ -16,6 +16,12 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
 
+import com.google.android.material.navigation.NavigationView;
+
+/**
+ * @author lzok
+ *
+ */
 public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     @Override
@@ -28,13 +34,35 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle("这是ToolBar");
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
-
+        NavigationView navView = findViewById(R.id.nav_view);
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar !=null){
             supportActionBar.setDisplayHomeAsUpEnabled(true);
             supportActionBar.setHomeAsUpIndicator(R.drawable.ic_launcher_foreground);
 
         }
+//      设置导航项目选定监听器
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                当点击某个item 时提示
+                if (item.getItemId() == R.id.nac_call){
+                    Toast.makeText(MainActivity.this, "电话", Toast.LENGTH_SHORT).show();
+                } else if (item.getItemId() == R.id.nac_friends) {
+                    Toast.makeText(MainActivity.this, "朋友", Toast.LENGTH_SHORT).show();
+
+                } else if (item.getItemId() == R.id.nac_location) {
+                    Toast.makeText(MainActivity.this, "位置", Toast.LENGTH_SHORT).show();
+
+                }else {
+                    Toast.makeText(MainActivity.this, "工作", Toast.LENGTH_SHORT).show();
+                }
+//                关闭侧滑菜单
+                drawerLayout.closeDrawers();
+
+                return true;
+            }
+        });
 //        设置状态栏透明
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
