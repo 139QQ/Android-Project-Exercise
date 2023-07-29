@@ -9,9 +9,19 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2cab9930-4ea3-4c09-9848-b3827c91a205" name="Changes" comment="添加悬浮按钮">
+    <list default="true" id="2cab9930-4ea3-4c09-9848-b3827c91a205" name="Changes" comment="设置Snackbar">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/lzok/materialdesign/Fruit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/lzok/materialdesign/FruitAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/blackcurrant.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ginseng.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/gooseberry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/indigo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/mysticfruit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/pricklypear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fruit_item.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/lzok/materialdesign/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/lzok/materialdesign/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +40,7 @@
         <option value="valueResourceFile" />
         <option value="resourceFile" />
         <option value="layoutResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -59,21 +70,21 @@
     "android-custom-viewC:/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.5.0/8d3b87c7463f55053836b805e014cb238f64757a/material-1.5.0-sources.jar!/com/google/android/material/navigation/NavigationView.java_SELECTED": "NavigationView",
     "cidr.known.project.marker": "true",
     "last_directory_selection": "D:/Git/Github/Android-Project-Exercise/MaterialDesign/app/src/main/res/drawable-v24",
-    "last_opened_file_path": "D:/Git/Github/Android-Project-Exercise/MaterialDesign"
+    "last_opened_file_path": "D:/Git/Github/Android-Project-Exercise/MaterialDesign/app/src/main/res/mipmap-xxxhdpi"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\res\mipmap-xxxhdpi" />
       <recent name="D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\res\drawable-v24" />
       <recent name="D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\res\drawable" />
       <recent name="D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\res\mipmap-xxhdpi" />
       <recent name="D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\res\mipmap-xhdpi" />
-      <recent name="D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\res\mipmap-mdpi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\res\drawable" />
       <recent name="D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\res\mipmap-xxhdpi" />
       <recent name="D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\res\mipmap-hdpi" />
-      <recent name="D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\res\drawable" />
       <recent name="D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\res\values" />
       <recent name="D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\res\layout" />
     </key>
@@ -217,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690629577728</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="设置Snackbar">
+      <created>1690630692296</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1690630692296</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -241,6 +259,7 @@
     <MESSAGE value="添加NavigationView视图" />
     <MESSAGE value="NavigationView布局" />
     <MESSAGE value="添加悬浮按钮" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加悬浮按钮" />
+    <MESSAGE value="设置Snackbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="设置Snackbar" />
   </component>
 </project>
