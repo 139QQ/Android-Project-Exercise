@@ -3,12 +3,15 @@ package com.lzok.materialdesign;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,13 +23,25 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 /**
  * @author lzok
  *
  */
 public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
+
+    Fruit[] fruits ={new Fruit("神秘果",R.drawable.mysticfruit)
+            ,new Fruit("刺梨",R.drawable.pricklypear)
+            ,new Fruit("黑加仑",R.drawable.blackcurrant)
+            ,new Fruit("醋栗",R.drawable.gooseberry)
+            ,new Fruit("蓝靛果",R.drawable.indigo)};
     FloatingActionButton fab;
+//    private FruitAdapter adapter;
+    List<Fruit> fruitsList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +103,13 @@ public class MainActivity extends AppCompatActivity {
         window.getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
+        initFruits();
+        RecyclerView recyclerView  =findViewById(R.id.recycler);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(new FruitAdapter(fruitsList));
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -109,6 +131,16 @@ public class MainActivity extends AppCompatActivity {
 
         }
         return true;
+
+    }
+    private void initFruits(){
+        fruitsList.clear();
+
+        Random random = new Random();
+        for (int i = 0; i < 50; i++) {
+            int index = random.nextInt(fruits.length);
+            fruitsList.add(fruits[index]);
+        }
 
     }
 }
