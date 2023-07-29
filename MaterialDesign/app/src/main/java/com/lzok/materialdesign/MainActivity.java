@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 /**
  * @author lzok
@@ -38,6 +39,21 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navView = findViewById(R.id.nav_view);
         fab = findViewById(R.id.fab);
+//        设置悬浮按钮的点击监听
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(MainActivity.this, "这是悬浮按钮", Toast.LENGTH_SHORT).show();替换为 Snackbar
+                Snackbar.make(v,"这是消息提醒",Snackbar.LENGTH_SHORT)
+                        .setAction("动作", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(MainActivity.this, "跳过", Toast.LENGTH_SHORT).show();
+
+                            }
+                        }).show();
+            }
+        });
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar !=null){
             supportActionBar.setDisplayHomeAsUpEnabled(true);
@@ -67,12 +83,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 //        设置状态栏透明
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = getWindow();
-            window.setStatusBarColor(Color.WHITE);
-            window.getDecorView().setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
+        Window window = getWindow();
+        window.setStatusBarColor(Color.WHITE);
+        window.getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
     }
     @Override
