@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 /**
@@ -24,6 +25,7 @@ import com.google.android.material.navigation.NavigationView;
  */
 public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
+    FloatingActionButton fab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navView = findViewById(R.id.nav_view);
+        fab = findViewById(R.id.fab);
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar !=null){
             supportActionBar.setDisplayHomeAsUpEnabled(true);

@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="my_app_background_floating">@color/white</color>
+    <color name="my_app_item_background">@color/white</color>
+    <color name="my_app_primary">@color/white</color>
+    <color name="my_app_primary_dark">#FFFFFFFF</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="window_background">#F5F5F5</color>
     <string name="app_name">MaterialDesign</string>
     <string name="backup">上传</string>
+    <string name="call">打电话</string>
     <string name="delete">删除</string>
+    <string name="friends">朋友</string>
+    <string name="location">位置</string>
+    <string name="mail">邮箱</string>
+    <string name="name">小明</string>
     <string name="settings">设置</string>
+    <string name="task">工作</string>
     <string name="thisismenu">这是菜单</string>
     <style name="Base.Theme.MaterialDesign" parent="Theme.Material3.DayNight.NoActionBar">
         
         
     </style>
-    <style name="Theme.MaterialDesign" parent="Base.Theme.MaterialDesign"/>
+    <style name="Theme.MaterialDesign" parent="Base.Theme.MaterialDesign">
+        <item name="colorPrimary">@color/my_app_primary</item>
+        <item name="colorPrimaryDark">@color/my_app_primary_dark</item>
+        <item name="itemBackground">@color/my_app_item_background</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:drawableLeft">@color/white</item>
+        <item name="android:colorBackgroundFloating">@color/my_app_background_floating</item>
+    </style>
 </resources>

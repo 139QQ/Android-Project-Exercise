@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.lzok.materialdesign.app-mergeDebugResources-36:/values-pt-rPT/values-pt-rPT.xml",
+            "outputFile": "com.lzok.materialdesign.app-mergeDebugResources-37:/values-pt-rPT/values-pt-rPT.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\64c4fc550d11a35f84690b0b0a7c0793\\transformed\\core-1.8.0\\res\\values-pt-rPT\\values-pt-rPT.xml",

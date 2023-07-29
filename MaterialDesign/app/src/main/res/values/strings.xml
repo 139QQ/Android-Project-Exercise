@@ -4,4 +4,10 @@
     <string name="delete">删除</string>
     <string name="settings">设置</string>
     <string name="thisismenu">这是菜单</string>
+    <string name="call">打电话</string>
+    <string name="friends">朋友</string>
+    <string name="location">位置</string>
+    <string name="mail">邮箱</string>
+    <string name="task">工作</string>
+    <string name="name">小明</string>
 </resources>

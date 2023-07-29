@@ -5,5 +5,13 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.MaterialDesign" parent="Base.Theme.MaterialDesign" />
+    <style name="Theme.MaterialDesign" parent="Base.Theme.MaterialDesign" >
+        <item name="colorPrimary">@color/my_app_primary</item>
+        <item name="colorPrimaryDark">@color/my_app_primary_dark</item>
+        <item name="itemBackground">@color/my_app_item_background</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:drawableLeft">@color/white</item>
+        <item name="android:colorBackgroundFloating">@color/my_app_background_floating</item>
+    </style>
+
 </resources>

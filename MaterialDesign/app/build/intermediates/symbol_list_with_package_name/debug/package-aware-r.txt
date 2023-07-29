@@ -479,6 +479,22 @@ attr fabCradleRoundedCornerRadius
 attr fabCradleVerticalOffset
 attr fabCustomSize
 attr fabSize
+attr fab_addButtonColorNormal
+attr fab_addButtonColorPressed
+attr fab_addButtonPlusIconColor
+attr fab_addButtonSize
+attr fab_addButtonStrokeVisible
+attr fab_colorDisabled
+attr fab_colorNormal
+attr fab_colorPressed
+attr fab_expandDirection
+attr fab_icon
+attr fab_labelStyle
+attr fab_labelsPosition
+attr fab_plusIconColor
+attr fab_size
+attr fab_stroke_visible
+attr fab_title
 attr fastScrollEnabled
 attr fastScrollHorizontalThumbDrawable
 attr fastScrollHorizontalTrackDrawable
@@ -1776,6 +1792,10 @@ color mtrl_textinput_disabled_color
 color mtrl_textinput_filled_box_default_background_color
 color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
+color my_app_background_floating
+color my_app_item_background
+color my_app_primary
+color my_app_primary_dark
 color notification_action_color_filter
 color notification_icon_bg_color
 color primary_dark_material_dark
@@ -1805,6 +1825,7 @@ color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
 color white
+color window_background
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1951,6 +1972,16 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen fab_actions_spacing
+dimen fab_icon_size
+dimen fab_labels_margin
+dimen fab_plus_icon_size
+dimen fab_plus_icon_stroke
+dimen fab_shadow_offset
+dimen fab_shadow_radius
+dimen fab_size_mini
+dimen fab_size_normal
+dimen fab_stroke_width
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -2468,6 +2499,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable add
 drawable avd_hide_password
 drawable avd_show_password
 drawable btn_checkbox_checked_mtrl
@@ -2478,11 +2510,15 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable call_phone_icon
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dog
+drawable fab_bg_mini
+drawable fab_bg_normal
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -2494,6 +2530,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable location
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
 drawable m3_radiobutton_ripple
@@ -2502,6 +2539,7 @@ drawable m3_tabs_background
 drawable m3_tabs_line_indicator
 drawable m3_tabs_rounded_line_indicator
 drawable m3_tabs_transparent_background
+drawable mail
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -2536,10 +2574,12 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable task
 drawable test_custom_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable users_people_icon
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -2702,6 +2742,8 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
+id dog
+id down
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -2725,6 +2767,9 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab
+id fab_expand_menu_button
+id fab_label
 id fade
 id fill
 id fill_horizontal
@@ -2779,6 +2824,7 @@ id listMode
 id list_item
 id locale
 id ltr
+id mail
 id masked
 id match_constraint
 id match_parent
@@ -2836,8 +2882,14 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id nac_call
+id nac_friends
+id nac_location
+id nac_mail
+id nac_task
 id nav_controller_view_tag
 id nav_host_fragment_container
+id nav_view
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -2978,6 +3030,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3009,6 +3062,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id usename
 id vertical_only
 id view_offset_helper
 id view_transition
@@ -3175,6 +3229,7 @@ layout mtrl_picker_header_title_text
 layout mtrl_picker_header_toggle
 layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
+layout nav_header
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -3200,6 +3255,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+menu nav_menu
 menu toolbar
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -3238,6 +3294,7 @@ string appbar_scrolling_view_behavior
 string backup
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
+string call
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -3248,9 +3305,11 @@ string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string friends
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
+string location
 string m3_ref_typeface_brand_display_regular
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
@@ -3276,6 +3335,7 @@ string m3_sys_typescale_label_small_font
 string m3_sys_typescale_title_large_font
 string m3_sys_typescale_title_medium_font
 string m3_sys_typescale_title_small_font
+string mail
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_selection
@@ -3332,6 +3392,7 @@ string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string mtrl_timepicker_confirm
+string name
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -3340,6 +3401,7 @@ string path_password_strike_through
 string search_menu_title
 string settings
 string status_bar_notification_info_overflow
+string task
 string thisismenu
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
@@ -4370,6 +4432,7 @@ styleable ActivityChooserView expandActivityOverflowButtonDrawable initialActivi
 styleable ActivityFilter activityAction activityName
 styleable ActivityNavigator android_name action data dataPattern targetPackage
 styleable ActivityRule alwaysExpand
+styleable AddFloatingActionButton fab_plusIconColor
 styleable AlertDialog android_layout buttonIconDimen buttonPanelSideLayout listItemLayout listLayout multiChoiceItemLayout showTitle singleChoiceItemLayout
 styleable AnimatedStateListDrawableCompat android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable AnimatedStateListDrawableItem android_id android_drawable
@@ -4416,8 +4479,9 @@ styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color dra
 styleable DrawerLayout elevation
 styleable ExtendedFloatingActionButton collapsedSize elevation extendMotionSpec hideMotionSpec showMotionSpec shrinkMotionSpec
 styleable ExtendedFloatingActionButton_Behavior_Layout behavior_autoHide behavior_autoShrink
-styleable FloatingActionButton android_enabled backgroundTint backgroundTintMode borderWidth elevation ensureMinTouchTargetSize fabCustomSize fabSize hideMotionSpec hoveredFocusedTranslationZ maxImageSize pressedTranslationZ rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec useCompatPadding
+styleable FloatingActionButton android_enabled backgroundTint backgroundTintMode borderWidth elevation ensureMinTouchTargetSize fabCustomSize fabSize fab_colorDisabled fab_colorNormal fab_colorPressed fab_icon fab_size fab_stroke_visible fab_title hideMotionSpec hoveredFocusedTranslationZ maxImageSize pressedTranslationZ rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec useCompatPadding
 styleable FloatingActionButton_Behavior_Layout behavior_autoHide
+styleable FloatingActionsMenu fab_addButtonColorNormal fab_addButtonColorPressed fab_addButtonPlusIconColor fab_addButtonSize fab_addButtonStrokeVisible fab_expandDirection fab_labelStyle fab_labelsPosition
 styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery fontProviderSystemFontFamily
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex

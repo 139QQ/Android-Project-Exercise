@@ -23,13 +23,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:text="主界面"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:contentDescription="dd"
+        android:src="@drawable/add"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 <LinearLayout
     android:id="@+id/texts"
     android:layout_width="match_parent"
@@ -46,8 +60,9 @@
       android:layout_height="match_parent"
       app:menu="@menu/nav_menu"
       app:headerLayout="@layout/nav_header"/>
+
 </LinearLayout>
 
-    
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
