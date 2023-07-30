@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.time.Instant;
 import java.util.List;
 
@@ -32,12 +34,14 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
         CardView cardView;
         TextView fruitName;
         ImageView fruitImage;
+        TextView descriptions;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 //            cardView = (CardView) itemView;
 //            获取ID
             fruitName = itemView.findViewById(R.id.fruit_name);
             fruitImage = itemView.findViewById(R.id.fruit_image);
+            descriptions =itemView.findViewById(R.id.descriptions);
         }
     }
 //    创建FruitAdapter构造器
@@ -75,8 +79,9 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
 //        将获取到的item放到 fruit中
         Fruit fruit = mFruit.get(position);
         holder.fruitName.setText(fruit.getName());
-
-        holder.fruitImage.setBackgroundResource(R.drawable.add);
+        holder.descriptions.setText(fruit.getDescriptions());
+        Glide.with(mContext).load(fruit.getImageId()).into(holder.fruitImage);
+//        holder.fruitImage.setBackgroundResource(R.drawable.add);
     }
 
     @Override
