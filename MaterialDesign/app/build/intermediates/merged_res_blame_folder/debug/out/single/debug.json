@@ -1,122 +1,150 @@
 [
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable-v24_task.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable-v24\\task.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\mipmap-xxhdpi_menu_icon.png.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\mipmap-xxhdpi\\menu_icon.png"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable_blackcurrant.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable\\blackcurrant.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\drawable-v24_mail.png.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\drawable-v24\\mail.png"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\drawable-v24_dog.png.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\drawable-v24\\dog.png"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable-v24_menu_icon.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable-v24\\menu_icon.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\xml\\data_extraction_rules.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\layout_fruit_item.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\layout\\fruit_item.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\drawable-v24_menu_icon.png.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\drawable-v24\\menu_icon.png"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable-v24_dog.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable-v24\\dog.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\menu_nav_menu.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\menu\\nav_menu.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "com.lzok.materialdesign.app-merged_res-40:/layout_fruit_item.xml.flat",
+        "source": "com.lzok.materialdesign.app-main-42:/layout/fruit_item.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\mipmap-xxhdpi_menu_icon.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\mipmap-xxhdpi\\menu_icon.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable-v24_location.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable-v24\\location.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\menu_toolbar.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\menu\\toolbar.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\layout_nav_header.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\layout\\nav_header.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\drawable-v24_call_phone_icon.png.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\drawable-v24\\call_phone_icon.png"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\menu_toolbar.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\menu\\toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\layout_nav_header.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\layout\\nav_header.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable_gooseberry.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable\\gooseberry.png"
     },
     {
-        "merged": "com.lzok.materialdesign.app-merged_res-39:/layout_activity_main.xml.flat",
-        "source": "com.lzok.materialdesign.app-main-41:/layout/activity_main.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable_ginseng.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable\\ginseng.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\drawable-v24\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\drawable-v24_users_people_icon.png.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\drawable-v24\\users_people_icon.png"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\xml\\backup_rules.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\drawable-v24_task.png.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\drawable-v24\\task.png"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable_pricklypear.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable\\pricklypear.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\drawable-v24_add.png.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\drawable-v24\\add.png"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable-v24_call_phone_icon.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable-v24\\call_phone_icon.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\drawable-v24_location.png.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\drawable-v24\\location.png"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable-v24_users_people_icon.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable-v24\\users_people_icon.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-39:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-41:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\menu_nav_menu.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\menu\\nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable-v24_mail.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable-v24\\mail.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable_mysticfruit.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable\\mysticfruit.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable-v24_add.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable-v24\\add.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\drawable_indigo.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\drawable\\indigo.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-merged_res-40:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.0\\com.lzok.materialdesign.app-main-42:\\mipmap-xxhdpi\\ic_launcher.webp"
     }
 ]

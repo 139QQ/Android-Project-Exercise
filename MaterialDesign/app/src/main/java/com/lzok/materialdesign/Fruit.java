@@ -6,10 +6,20 @@ package com.lzok.materialdesign;
 public class Fruit {
     private String name;
     private int ImageId;
+    private String Descriptions;
 
-    public Fruit(String name, int imageId) {
+    public String getDescriptions() {
+        return Descriptions;
+    }
+
+    public void setDescriptions(String descriptions) {
+        Descriptions = descriptions;
+    }
+
+    public Fruit(String name, int imageId, String descriptions) {
         this.name = name;
         ImageId = imageId;
+        Descriptions = descriptions;
     }
 
     public String getName() {
@@ -27,4 +37,5 @@ public class Fruit {
     public void setImageId(int imageId) {
         ImageId = imageId;
     }
+
 }

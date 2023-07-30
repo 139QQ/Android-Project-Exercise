@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.lzok.materialdesign.app-mergeDebugResources-37:/values-v17/values-v17.xml",
+            "outputFile": "com.lzok.materialdesign.app-mergeDebugResources-38:/values-v17/values-v17.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\ad20d193776a9414b5cc664bee7312b5\\transformed\\appcompat-1.4.1\\res\\values-v17\\values-v17.xml",

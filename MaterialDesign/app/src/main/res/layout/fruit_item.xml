@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/fruit_image"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,19 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:textSize="16dp"
+        android:scrollHorizontally ="true"
         app:layout_constraintStart_toEndOf="@+id/fruit_image"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/descriptions"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:maxLines="3"
+        android:selectAllOnFocus="true"
+        app:layout_constraintStart_toEndOf="@+id/fruit_image"
+        app:layout_constraintTop_toBottomOf="@+id/fruit_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

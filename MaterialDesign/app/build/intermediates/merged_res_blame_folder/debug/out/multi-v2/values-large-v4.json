@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.lzok.materialdesign.app-mergeDebugResources-37:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.lzok.materialdesign.app-mergeDebugResources-38:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\d857d0ade5f86bfb30bb8261a110709d\\transformed\\material-1.5.0\\res\\values-large-v4\\values-large-v4.xml",
