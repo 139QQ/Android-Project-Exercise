@@ -1,16 +1,5 @@
 package com.lzok.materialdesign;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.LinearLayoutCompat;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,6 +7,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -34,13 +32,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
 
-    Fruit[] fruits ={new Fruit("神秘果",R.drawable.mysticfruit)
-            ,new Fruit("刺梨",R.drawable.pricklypear)
-            ,new Fruit("黑加仑",R.drawable.blackcurrant)
-            ,new Fruit("醋栗",R.drawable.gooseberry)
-            ,new Fruit("蓝靛果",R.drawable.indigo)};
     FloatingActionButton fab;
-//    private FruitAdapter adapter;
     List<Fruit> fruitsList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,12 +94,15 @@ public class MainActivity extends AppCompatActivity {
         window.setStatusBarColor(Color.WHITE);
         window.getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-
+//      调用方法
         initFruits();
+//        获取RecyclerView 视图的id
         RecyclerView recyclerView  =findViewById(R.id.recycler);
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+//      设置布局样式网格布局
+        GridLayoutManager linearLayoutManager = new GridLayoutManager(this,2);
+//        设置布局管理器，将布局样式放到形参中
         recyclerView.setLayoutManager(linearLayoutManager);
+//        设置适配器
         recyclerView.setAdapter(new FruitAdapter(fruitsList));
 
     }
@@ -133,11 +128,26 @@ public class MainActivity extends AppCompatActivity {
         return true;
 
     }
+/**
+ * 将填充的数据和描述封装在一个方法中
+ *
+  */
+
     private void initFruits(){
         fruitsList.clear();
+        String HeiJiaLun = "黑加仑，即黑茶藨子，果实近圆形，熟时黑色，性喜光、耐寒，生于湿润谷底、沟边或坡地云杉林、落叶松林或针、阔混交林下，适宜在中国北方寒冷地区培植。" +
+                "黑加仑主要分布于中国黑龙江、内蒙古及新疆等省份，欧洲、俄罗斯、蒙古和朝鲜北部也有分布。";
+         String ciLi ="即刺果茶藨子，是虎耳草科茶藨子属植物，果实圆球形，直径约一厘米，具多数黄褐色小刺，味酸，可供食用，但以制作果汁和果酒为宜。" +
+                "刺梨主要分布于中国黑龙江、吉林、辽宁、内蒙古、河北、山西、陕西、甘肃、河南等地区，蒙古、朝鲜、俄罗斯远东地区也有分布";
+        Fruit[] fruits ={new Fruit("神秘果",R.drawable.mysticfruit,"")
+                ,new Fruit("刺梨",R.drawable.pricklypear,ciLi)
+                ,new Fruit("黑加仑",R.drawable.blackcurrant, HeiJiaLun)
+                ,new Fruit("醋栗",R.drawable.gooseberry,"")
+                ,new Fruit("蓝靛果",R.drawable.indigo,"")};
+
 
         Random random = new Random();
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i <= 100; i++) {
             int index = random.nextInt(fruits.length);
             fruitsList.add(fruits[index]);
         }
