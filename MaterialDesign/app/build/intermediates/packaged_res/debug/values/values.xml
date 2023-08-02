@@ -29,5 +29,6 @@
         <item name="android:windowBackground">@color/window_background</item>
         <item name="android:drawableLeft">@color/white</item>
         <item name="android:colorBackgroundFloating">@color/my_app_background_floating</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 </resources>
