@@ -8,6 +8,12 @@
         android:minSdkVersion="29"
         android:targetSdkVersion="33" />
 
+    <permission
+        android:name="com.lzok.materialdesign.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.lzok.materialdesign.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -21,6 +27,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.MaterialDesign" >
+        <activity
+            android:name="com.lzok.materialdesign.Fruits"
+            android:exported="false" />
         <activity
             android:name="com.lzok.materialdesign.MainActivity"
             android:exported="true" >
