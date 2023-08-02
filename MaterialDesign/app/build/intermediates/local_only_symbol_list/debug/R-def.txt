@@ -23,14 +23,18 @@ drawable mysticfruit
 drawable pricklypear
 drawable task
 drawable users_people_icon
+id appBar
 id backup
+id collapsing_toolbr
 id delete
-id descriptions
 id dog
 id drawer_layout
 id fab
+id fruit_content_text
 id fruit_image
+id fruit_image_view
 id fruit_name
+id fruit_toolbar_coll
 id mail
 id materialToolbar
 id nac_call
@@ -43,6 +47,7 @@ id recycler
 id setting
 id texts
 id usename
+layout activity_fruits
 layout activity_main
 layout fruit_item
 layout nav_header

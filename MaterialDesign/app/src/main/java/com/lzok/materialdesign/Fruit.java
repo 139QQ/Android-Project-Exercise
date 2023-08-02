@@ -1,25 +1,22 @@
 package com.lzok.materialdesign;
 
+import android.content.Intent;
+
 /**
  * @author Administrator
  */
-public class Fruit {
+public class Fruit extends Intent {
     private String name;
     private int ImageId;
-    private String Descriptions;
 
-    public String getDescriptions() {
-        return Descriptions;
-    }
 
-    public void setDescriptions(String descriptions) {
-        Descriptions = descriptions;
-    }
 
-    public Fruit(String name, int imageId, String descriptions) {
+
+
+    public Fruit(String name, int imageId) {
         this.name = name;
         ImageId = imageId;
-        Descriptions = descriptions;
+
     }
 
     public String getName() {
