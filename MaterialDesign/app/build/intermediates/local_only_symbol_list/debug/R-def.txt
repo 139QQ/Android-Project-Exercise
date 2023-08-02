@@ -68,6 +68,7 @@ string settings
 string task
 string thisismenu
 style Base.Theme.MaterialDesign
+style FruitsTheme
 style Theme.MaterialDesign
 xml backup_rules
 xml data_extraction_rules

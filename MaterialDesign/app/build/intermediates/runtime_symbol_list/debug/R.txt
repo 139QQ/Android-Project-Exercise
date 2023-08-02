@@ -4269,6 +4269,7 @@ int style Base_Widget_MaterialComponents_TextView 0x7f110119
 int style CardView 0x7f11011a
 int style CardView_Dark 0x7f11011b
 int style CardView_Light 0x7f11011c
+int style FruitsTheme 0x7f11044f
 int style MaterialAlertDialog_Material3 0x7f11011d
 int style MaterialAlertDialog_Material3_Animation 0x7f11011e
 int style MaterialAlertDialog_Material3_Body_Text 0x7f11011f

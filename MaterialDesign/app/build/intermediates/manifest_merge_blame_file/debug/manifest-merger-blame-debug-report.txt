@@ -22,7 +22,7 @@
 15-->[androidx.core:core:1.9.0] C:\Users\Administrator\.gradle\caches\transforms-3\05f166a9cf85a4ee8118cfa57d36cc76\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 16
 17    <application
-17-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:5:5-27:19
+17-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:5:5-29:19
 18        android:allowBackup="true"
 18-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:6:9-35
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -45,26 +45,26 @@
 29        android:theme="@style/Theme.MaterialDesign" >
 29-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:13:9-52
 30        <activity
-30-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:15:9-17:40
+30-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:15:9-19:15
 31            android:name="com.lzok.materialdesign.Fruits"
 31-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:16:13-35
 32            android:exported="false" />
 32-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:17:13-37
 33        <activity
-33-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:18:9-26:20
+33-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:20:9-28:20
 34            android:name="com.lzok.materialdesign.MainActivity"
-34-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:19:13-41
+34-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:21:13-41
 35            android:exported="true" >
-35-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:20:13-36
+35-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:22:13-36
 36            <intent-filter>
-36-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:21:13-25:29
+36-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:23:13-27:29
 37                <action android:name="android.intent.action.MAIN" />
-37-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:22:17-69
-37-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:22:25-66
+37-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:24:17-69
+37-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:24:25-66
 38
 39                <category android:name="android.intent.category.LAUNCHER" />
-39-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:24:17-77
-39-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:24:27-74
+39-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:26:17-77
+39-->D:\Git\Github\Android-Project-Exercise\MaterialDesign\app\src\main\AndroidManifest.xml:26:27-74
 40            </intent-filter>
 41        </activity>
 42
