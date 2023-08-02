@@ -1,11 +1,13 @@
 package com.lzok.materialdesign;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -13,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-import java.time.Instant;
 import java.util.List;
 
 /**
@@ -24,6 +25,7 @@ import java.util.List;
 public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> {
     private Context mContext;
     private List<Fruit> mFruit;
+
 
     /**
      * 视图文件夹
@@ -37,11 +39,11 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
         TextView descriptions;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-//            cardView = (CardView) itemView;
+            cardView = (CardView) itemView;
 //            获取ID
             fruitName = itemView.findViewById(R.id.fruit_name);
             fruitImage = itemView.findViewById(R.id.fruit_image);
-            descriptions =itemView.findViewById(R.id.descriptions);
+
         }
     }
 //    创建FruitAdapter构造器
@@ -65,7 +67,6 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
             mContext = parent.getContext();
         }
         View inflate = LayoutInflater.from(mContext).inflate(R.layout.fruit_item, parent, false);
-
         return new ViewHolder(inflate);
     }
 
@@ -79,9 +80,21 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
 //        将获取到的item放到 fruit中
         Fruit fruit = mFruit.get(position);
         holder.fruitName.setText(fruit.getName());
-        holder.descriptions.setText(fruit.getDescriptions());
+
         Glide.with(mContext).load(fruit.getImageId()).into(holder.fruitImage);
-//        holder.fruitImage.setBackgroundResource(R.drawable.add);
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, Fruits.class);
+                intent.putExtra(Fruits.FRUITS_NAME,fruit.getName());
+                intent.putExtra(Fruits.FRUITS_IMAGE_ID,fruit.getImageId());
+                mContext.startActivity(intent);
+            }
+
+        });
+
+
     }
 
     @Override
