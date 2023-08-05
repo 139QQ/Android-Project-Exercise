@@ -2,6 +2,7 @@ package com.lzok.coolweather;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -100,6 +101,19 @@ public class ChooseAreaFragment extends Fragment {
                     selectedCity = cityList.get(position);
                     queryCounties();
                 }
+                if (currentLevel == LEVEL_PROVINCE){
+                    selectedProvince = provinceList.get(position    );
+                    queryCities();
+                } else if (currentLevel == LEVEL_CITY) {
+                    selectedCity = cityList.get(position);
+                    queryCounties();
+                } else if (currentLevel == LEVEL_COUNTY) {
+                    String weatherId = countyList.get(position).getWeatherId();
+                    Intent intent = new Intent(getActivity(), Weather.class);
+                    intent.putExtra("weather_id",weatherId);
+                    startActivity(intent);
+                    getActivity().finish();
+                }
             }
         });
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -187,6 +201,7 @@ public class ChooseAreaFragment extends Fragment {
                     + "/" +cityCode;
             queryFromSever(address,"county");
         }
+
     }
 
     /**
