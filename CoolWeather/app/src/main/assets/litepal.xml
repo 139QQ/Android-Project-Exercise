@@ -1,45 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <litepal>
-    <!--
-    	定义应用程序的数据库名称。
-    	默认情况下，每个数据库名称应以.db结尾。
-    	如果没有将数据库的结尾命名为.db，LitePal会自动为你添加后缀。
-    	例如：
-    	<dbname value="demo" />
-    -->
     <dbname value="cool_weather" />
-
-    <!--
-    	定义数据库的版本。每次升级数据库时，版本标签都会有所帮助。
-    	修改你在mapping标签中定义的模型，只需将版本值加上一，数据库的升级将自动进行，无需担心。
-    	例如：
-    	<version value="1" />
-    -->
     <version value="1" />
-
-    <!--
-    	在带有映射标记的列表中定义模型，LitePal将为每个映射类创建表。
-    	模型中定义的受支持字段将映射到列中。
-    	例如：
-    	<list>
-    		<mapping class="com.test.model.Reader" />
-    		<mapping class="com.test.model.Magazine" />
-    	</list>
-    -->
     <list>
         <mapping class="com.coolweather.android.db.Province" />
         <mapping class="com.coolweather.android.db.City" />
         <mapping class="com.coolweather.android.db.County" />
     </list>
-
-    <!--
-        定义.db文件应位于的位置。
-        “internal”是指.db文件将存储在任何人都无法访问的internal storage的数据库文件夹中。
-        “external”是指.db文件将存储在主外部存储设备上的目录路径中，应用程序可以将其拥有的所有人都可以访问的持久文件放置在该目录中。
-        “internal”将作为默认值。
-        例如：
-        <storage value="external" />
-    -->
-
 </litepal>
 
