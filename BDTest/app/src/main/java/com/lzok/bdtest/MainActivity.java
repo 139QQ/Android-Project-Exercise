@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     public LocationClient mLocationClient = null;
     private MyLocationListener myListener = new MyLocationListener();
-    TextView jh;
+    TextView jh,city,country,addrstr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i(TAG, "onCreate: " +mLocationClient);
         jh = findViewById(R.id.jh);
+        city = findViewById(R.id.text_City);
+        country = findViewById(R.id.text_Country);
+        addrstr  = findViewById(R.id.text_addrstr);
         jh.setText("你好世界");
 
     }
@@ -79,7 +82,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceiveLocation(BDLocation bdLocation) {
             if (bdLocation != null){
+//                获取区县
                 jh.setText(bdLocation.getDistrict());
+//                获取国家
+                country.setText(bdLocation.getCountry());
+//                获取城市
+                city.setText(bdLocation.getCity());
+//                获取街道
+                addrstr.setText(bdLocation.getAddrStr());
             }
 
             Log.i(TAG, "onReceiveLocation: "+ bdLocation);
