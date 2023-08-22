@@ -26,9 +26,10 @@ import com.lzok.bdtest.location.LocationCallback;
 import com.lzok.bdtest.location.MyLocationListener;
 import com.lzok.bdtest.location.S;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements LocationCallback {
 
     public LocationClient mLocationClient = null;
     private MyLocationListener myListener = new MyLocationListener();
@@ -88,13 +89,8 @@ public class MainActivity extends AppCompatActivity  {
                 Longitude = findViewById(R.id.text_Longitude);
                 Latitude = findViewById(R.id.text_Latitude);
 
-    mLocationClient.registerLocationListener(new BDLocationListener() {
-        @Override
-        public void onReceiveLocation(BDLocation bdLocation) {
+                Latitude.setText( S.LATI_TUDE + "纬度");
 
-            Latitude.setText(bdLocation.getAddrStr());
-        }
-    });
         }
 
             public  void startLocation(){
@@ -105,7 +101,7 @@ public class MainActivity extends AppCompatActivity  {
                     throw new RuntimeException(e);
                 }
                 if (mLocationClient !=null){
-
+                    myListener.setCallback(this);
                     //声明LocationClient类
                     mLocationClient.registerLocationListener(myListener);
                     //注册监听函数
@@ -126,22 +122,21 @@ public class MainActivity extends AppCompatActivity  {
 
 
                     mLocationClient.start();
+
                 }
             }
 
-//    @Override
-//    public void onReceiveLocation(BDLocation location) {
-//
-//        jh.setText(location.getDistrict());
-//        country.setText(location.getCountry());
-//        city.setText(location.getCity());
-//        addrstr.setText(location.getAddrStr());
-//
-//        S.LATI_TUDE  = location.getLatitude();
-//        S.LONG_TUDE = location.getLongitude();
-//        Longitude.setText(S.LONG_TUDE+","+S.LATI_TUDE);
-//        Log.i(TAG, "onReceiveLocation: "+ S.LONG_TUDE);
-////        handler.postDelayed(runnable,20000);
-//    }
 
+    @Override
+    public void onReceiveLocation(BDLocation bdLocation) {
+        jh.setText(bdLocation.getDistrict());
+        city.setText(bdLocation.getCity());
+        country.setText(bdLocation.getCountry());
+        addrstr.setText(bdLocation.getAddrStr());
+
+
+        // 将经度保存到S类的LATI_TUDE静态变量中
+        S.LATI_TUDE = bdLocation.getLatitude();
+        Log.i(TAG, "onReceiveLocation: "+S.LATI_TUDE );
+    }
 }
