@@ -4,6 +4,7 @@ import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.MutableLiveData;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -36,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements LocationCallback 
 
     TextView jh,city,country,addrstr,Longitude,Latitude;
 
+    String weidu = null;
+    private MutableLiveData<BDLocation> locationLiveData = new MutableLiveData<>();
+    boolean locationObtained = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +84,22 @@ public class MainActivity extends AppCompatActivity implements LocationCallback 
         editor.putString("key", "value");
         editor.apply();
 
+        locationLiveData.observe(this, bdLocation -> {
 
+            // 获取到定位数据了
+            if(bdLocation != null){
+
+                // 更新UI等操作
+                jh.setText(bdLocation.getDistrict());
+                if (locationObtained) {
+                    // 可以安全使用S.LATI_TUDE
+                    weidu =S.LONG_TUDE+","+ S.LATI_TUDE ;
+                    Latitude.setText(weidu);
+                    Log.i(TAG, "onCreate: " +Latitude.toString());
+                }
+            }
+
+        });
 
                 jh = findViewById(R.id.jh);
                 city = findViewById(R.id.text_City);
@@ -89,9 +108,23 @@ public class MainActivity extends AppCompatActivity implements LocationCallback 
                 Longitude = findViewById(R.id.text_Longitude);
                 Latitude = findViewById(R.id.text_Latitude);
 
-                Latitude.setText( S.LATI_TUDE + "纬度");
+
 
         }
+    @Override
+    public void onReceiveLocation(BDLocation bdLocation) {
+        locationLiveData.postValue(bdLocation);
+        locationObtained = true;
+//        jh.setText(bdLocation.getDistrict());
+        city.setText(bdLocation.getCity());
+        country.setText(bdLocation.getCountry());
+        addrstr.setText(bdLocation.getAddrStr());
+
+        S.LONG_TUDE= bdLocation.getLongitude();
+        // 将经度保存到S类的LATI_TUDE静态变量中
+        S.LATI_TUDE = bdLocation.getLatitude();
+        Log.i(TAG, "onReceiveLocation: "+S.LATI_TUDE );
+    }
 
             public  void startLocation(){
 
@@ -127,16 +160,5 @@ public class MainActivity extends AppCompatActivity implements LocationCallback 
             }
 
 
-    @Override
-    public void onReceiveLocation(BDLocation bdLocation) {
-        jh.setText(bdLocation.getDistrict());
-        city.setText(bdLocation.getCity());
-        country.setText(bdLocation.getCountry());
-        addrstr.setText(bdLocation.getAddrStr());
 
-
-        // 将经度保存到S类的LATI_TUDE静态变量中
-        S.LATI_TUDE = bdLocation.getLatitude();
-        Log.i(TAG, "onReceiveLocation: "+S.LATI_TUDE );
-    }
 }
