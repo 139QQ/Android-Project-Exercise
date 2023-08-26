@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ImagerApplication</string>
+    <string name="logingItem">长按我，加载菜单</string>
+</resources>

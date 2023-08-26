@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<TextView
+    android:id="@+id/textMenu"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="#4EA9E9"
+    android:clickable="true"
+    android:gravity="center"
+    android:text="@string/logingItem"
+    android:textSize="20sp"
+    />
+<ImageView
+    android:id="@+id/imgPic"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"/>
+<ScrollView
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+ <TextView
+     android:id="@+id/txtshow"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content" />
+</ScrollView>
+ <WebView
+     android:id="@+id/webView"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"/>
+</LinearLayout>
