@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/time"
+    android:orientation="vertical"
+    android:layout_width="40dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp">
+
+    <TextView
+        android:id="@+id/text_24hour_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"
+        android:text="18:00" />
+    <ImageView
+        android:id="@+id/ico_climatic"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/text_24hour_time"
+        android:layout_marginTop="8dp"/>
+    <TextView
+        android:id="@+id/rec_text_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ico_climatic"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:text="29"
+        android:layout_marginTop="8dp"/>
+    <ImageView
+    android:id="@+id/temp_roundabout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/rec_text_temp"
+    android:layout_marginTop="8dp"
+    />
+    <TextView
+        android:id="@+id/text_humidity_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/temp_roundabout"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginTop="8dp"/>
+    <TextView
+        android:id="@+id/text_fig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_humidity_level"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="微风"
+        android:textSize="13sp"
+        />
+</RelativeLayout>

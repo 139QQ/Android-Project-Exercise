@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 允许访问网络,用于进行网络定位-->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 访问WiFi网络信息,用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 访问网络状态,判断是否可以使用网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- 访问精确位置,用于GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- 访问粗略位置,用于网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- 读取手机状态,用于判断是否锁屏-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 写入外部存储,用于写入离线定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- 读取外部存储,用于读取离线定位数据 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <!-- 访问蓝牙,用于蓝牙定位-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <!-- 蓝牙管理权限,用于蓝牙定位-->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- 后台定位权限 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WeatherWise"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.baidu.lbsapi.API_KEY"
+            android:value="8O5zFTWLBkS3qAylCn0MQQE4zxhfwGMb"/>
+        <meta-data
+            android:name="ScopedStorage" android:value="true"/>
+    </application>
+
+</manifest>
