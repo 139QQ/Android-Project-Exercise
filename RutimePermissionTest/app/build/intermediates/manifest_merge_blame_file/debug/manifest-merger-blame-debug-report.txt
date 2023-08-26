@@ -1,0 +1,122 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.lzok.rutimepermissiontest"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="29"
+8-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:4:5-66
+11-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+12-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:5:5-70
+12-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:5:22-68
+13    <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" />
+13-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:6:5-77
+13-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:6:22-75
+14    <uses-permission android:name="android.permission.WRITE_VOICEMAIL" />
+14-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:7:5-73
+14-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:7:22-71
+15
+16    <permission-group android:name="android.permission-group.CAMERA" />
+16-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:8:5-71
+16-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:8:23-69
+17
+18    <uses-feature
+18-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:10:5-12:35
+19        android:name="android.hardware.telephony"
+19-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:11:9-50
+20        android:required="true" />
+20-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:12:9-32
+21    <uses-feature
+21-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:13:5-15:36
+22        android:name="android.hardware.camera"
+22-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:14:9-47
+23        android:required="false" />
+23-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:15:9-33
+24
+25    <uses-permission android:name="android.permission.CALL_PHONE" />
+25-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:17:5-68
+25-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:17:22-66
+26
+27    <permission
+27-->[androidx.core:core:1.9.0] D:\AndroidSDK\caches\transforms-3\8c25e88eb4ea76e8f3d0900731d8ae12\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+28        android:name="com.lzok.rutimepermissiontest.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+28-->[androidx.core:core:1.9.0] D:\AndroidSDK\caches\transforms-3\8c25e88eb4ea76e8f3d0900731d8ae12\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+29        android:protectionLevel="signature" />
+29-->[androidx.core:core:1.9.0] D:\AndroidSDK\caches\transforms-3\8c25e88eb4ea76e8f3d0900731d8ae12\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+30
+31    <uses-permission android:name="com.lzok.rutimepermissiontest.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+31-->[androidx.core:core:1.9.0] D:\AndroidSDK\caches\transforms-3\8c25e88eb4ea76e8f3d0900731d8ae12\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+31-->[androidx.core:core:1.9.0] D:\AndroidSDK\caches\transforms-3\8c25e88eb4ea76e8f3d0900731d8ae12\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+32
+33    <application
+33-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:18:5-37:19
+34        android:allowBackup="true"
+34-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:19:9-35
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.9.0] D:\AndroidSDK\caches\transforms-3\8c25e88eb4ea76e8f3d0900731d8ae12\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+36        android:dataExtractionRules="@xml/data_extraction_rules"
+36-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:20:9-65
+37        android:debuggable="true"
+38        android:extractNativeLibs="false"
+39        android:fullBackupContent="@xml/backup_rules"
+39-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:21:9-54
+40        android:icon="@mipmap/ic_launcher"
+40-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:22:9-43
+41        android:label="@string/app_name"
+41-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:23:9-41
+42        android:roundIcon="@mipmap/ic_launcher_round"
+42-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:24:9-54
+43        android:supportsRtl="true"
+43-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:25:9-35
+44        android:testOnly="true"
+45        android:theme="@style/Theme.RutimePermissionTest" >
+45-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:26:9-58
+46        <activity
+46-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:28:9-36:20
+47            android:name="com.lzok.rutimepermissiontest.MainActivity"
+47-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:29:13-41
+48            android:exported="true" >
+48-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:30:13-36
+49            <intent-filter>
+49-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:31:13-35:29
+50                <action android:name="android.intent.action.MAIN" />
+50-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:32:17-69
+50-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:32:25-66
+51
+52                <category android:name="android.intent.category.LAUNCHER" />
+52-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:34:17-77
+52-->D:\Git\Github\Android-Project-Exercise\RutimePermissionTest\app\src\main\AndroidManifest.xml:34:27-74
+53            </intent-filter>
+54        </activity>
+55
+56        <provider
+56-->[androidx.emoji2:emoji2:1.2.0] D:\AndroidSDK\caches\transforms-3\3d235ed602f65236d1e967aa3ae41734\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+57            android:name="androidx.startup.InitializationProvider"
+57-->[androidx.emoji2:emoji2:1.2.0] D:\AndroidSDK\caches\transforms-3\3d235ed602f65236d1e967aa3ae41734\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+58            android:authorities="com.lzok.rutimepermissiontest.androidx-startup"
+58-->[androidx.emoji2:emoji2:1.2.0] D:\AndroidSDK\caches\transforms-3\3d235ed602f65236d1e967aa3ae41734\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+59            android:exported="false" >
+59-->[androidx.emoji2:emoji2:1.2.0] D:\AndroidSDK\caches\transforms-3\3d235ed602f65236d1e967aa3ae41734\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+60            <meta-data
+60-->[androidx.emoji2:emoji2:1.2.0] D:\AndroidSDK\caches\transforms-3\3d235ed602f65236d1e967aa3ae41734\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+61                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+61-->[androidx.emoji2:emoji2:1.2.0] D:\AndroidSDK\caches\transforms-3\3d235ed602f65236d1e967aa3ae41734\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+62                android:value="androidx.startup" />
+62-->[androidx.emoji2:emoji2:1.2.0] D:\AndroidSDK\caches\transforms-3\3d235ed602f65236d1e967aa3ae41734\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+63            <meta-data
+63-->[androidx.lifecycle:lifecycle-process:2.4.1] D:\AndroidSDK\caches\transforms-3\74479ed0ca537f847c79c9f1d11b43a4\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+64                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+64-->[androidx.lifecycle:lifecycle-process:2.4.1] D:\AndroidSDK\caches\transforms-3\74479ed0ca537f847c79c9f1d11b43a4\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+65                android:value="androidx.startup" />
+65-->[androidx.lifecycle:lifecycle-process:2.4.1] D:\AndroidSDK\caches\transforms-3\74479ed0ca537f847c79c9f1d11b43a4\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+66        </provider>
+67    </application>
+68
+69</manifest>
