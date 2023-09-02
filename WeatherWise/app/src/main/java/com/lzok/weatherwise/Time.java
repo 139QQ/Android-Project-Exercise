@@ -11,7 +11,7 @@ public class Time {
     }
 
 
-    private String GetWindDir;
+    private double windDegree;
 
 
 
@@ -34,7 +34,7 @@ public class Time {
     private String temperature;
     private String weather;
 
-
+    private String humidity;
 
 
     public String getTemperature() {
@@ -90,11 +90,11 @@ public class Time {
     }
 
     public String getText_humidity_level() {
-        return text_humidity_level;
+        return humidity;
     }
 
-    public void setText_humidity_level(String text_humidity_level) {
-        this.text_humidity_level = text_humidity_level;
+    public void setText_humidity_level(String humidity) {
+        this.humidity = humidity;
     }
 
     public String getText_fig() {
@@ -104,6 +104,7 @@ public class Time {
     public void setText_fig(String text_fig) {
         this.text_fig = text_fig;
     }
+
     public String getTime() {
         return this.time;
     }
@@ -115,11 +116,12 @@ public class Time {
     public void setIconDrawable(Drawable iconDrawable) {
         this.iconDrawable = iconDrawable;
     }
-    public String getGetWindDir() {
-        return GetWindDir;
+
+    public double getWindDegree() {
+        return windDegree;
     }
 
-    public void setGetWindDir(String getWindDir) {
-        GetWindDir = getWindDir;
+    public void setWindDegree(double windDegree) {
+        this.windDegree = windDegree;
     }
 }

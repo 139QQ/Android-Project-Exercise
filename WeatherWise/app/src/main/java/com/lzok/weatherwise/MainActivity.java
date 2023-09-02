@@ -10,6 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -18,8 +19,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewStub;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +37,8 @@ import com.caverock.androidsvg.SVG;
 import com.caverock.androidsvg.SVGParseException;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.hjq.permissions.OnPermissionCallback;
 import com.hjq.permissions.Permission;
 import com.hjq.permissions.XXPermissions;
@@ -68,11 +73,14 @@ import java.util.TimeZone;
  */
 public class MainActivity extends AppCompatActivity implements LocationCallback {
 
-    TextView temp,cclimatic,text_interval_temp,ds;
+    TextView temp,cclimatic,text_interval_temp,text_location;
     Toolbar toolbar_district;
     List<Time> timeList = generateTimeList();
+    ImageView image_location;
     List<Time> timeTemp = null;
-//    连接
+    CollapsingToolbarLayout collapsingToolbarLayout;
+    AppBarLayout appBarLayout;
+    //    连接
     private LocationClient mLocationClient = null;
     private WeatherLocationListener myListener = new WeatherLocationListener();
     LocationClientOption.FirstLocType FirstLocTypefirstLocType = null;
@@ -81,22 +89,21 @@ public class MainActivity extends AppCompatActivity implements LocationCallback 
      */
     private MutableLiveData<BDLocation> locationLiveData = new MutableLiveData<>();
     String gps= null;
-    SimpleDateFormat isoFormat;
-    LocalDateTime date;
-    // 创建温度数据集合
-    List<Entry> temperatureEntries = new ArrayList<>();
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        temp = findViewById(R.id.text_temp);
+        temp =findViewById(R.id.text_temp);
         cclimatic = findViewById(R.id.text_climatic);
         text_interval_temp= findViewById(R.id.text_interval_temp);
-        toolbar_district =findViewById(R.id.materialToolbar) ;
-        ds = findViewById(R.id.ds);
-        LocationClient.setAgreePrivacy(true);
+        text_location = findViewById(R.id.text_location);
+        collapsingToolbarLayout = findViewById(R.id.collapsingToolbarLayout);
+        appBarLayout = findViewById(R.id.dd);
 
+        LocationClient.setAgreePrivacy(true);
+        context = this;
 
 
         //   和风天气初始化
@@ -147,9 +154,7 @@ public class MainActivity extends AppCompatActivity implements LocationCallback 
         recyclerView.setAdapter(adapter);
 //        在这里观察
         locationLiveData.observe(this, bdLocation -> {
-
-
-
+            text_location.setText(bdLocation.getDistrict());
 
             //        北京实时天气
      QWeather.getWeatherNow(MainActivity.this,gps, Lang.ZH_HANS, Unit.METRIC, new QWeather.OnResultWeatherNowListener() {
@@ -194,8 +199,14 @@ public class MainActivity extends AppCompatActivity implements LocationCallback 
 
                         Time time = timeList.get(i);
                         String fxTime = hourly.get(i).getFxTime();
-                        String wind360 = hourly.get(i).getWind360();
-                        Log.i(TAG, "onSuccess: "+wind360);
+//                        获取360度风向
+                        double windDegree = Double.parseDouble(hourly.get(i).getWind360());
+//                        添加图标
+                        timeList.get(i).setWindDegree(windDegree);
+//                     获取湿度
+                        String humidity = hourly.get(i).getHumidity();
+                        time.setText_humidity_level(humidity);
+
 
                         try {
                             SimpleDateFormat isoFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
@@ -219,6 +230,7 @@ public class MainActivity extends AppCompatActivity implements LocationCallback 
 
                         time.setText_humidity_level(hourly.get(i).getPop());
                         time.setText_fig(hourly.get(i).getWindDir());
+                        Log.i(TAG, "getWindDir: "+hourly.get(i).getWindDir());
                         time.setTemperature(hourly.get(i).getTemp());
 
 
@@ -446,7 +458,6 @@ public class MainActivity extends AppCompatActivity implements LocationCallback 
     public void onReceiveLocation(BDLocation bdLocation) {
 
 
-        toolbar_district.setTitle(bdLocation.getDistrict());
         locationLiveData.postValue(bdLocation);
 
         gps = bdLocation.getLongitude()+","+bdLocation.getLatitude();
