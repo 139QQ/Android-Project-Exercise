@@ -6,7 +6,10 @@ package com.lzok.rssread;
 
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+import static androidx.core.content.ContextCompat.startActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,11 +34,11 @@ import java.util.TimeZone;
  */
 public class ThisAdapter extends RecyclerView.Adapter<ThisAdapter.ViewHolder>{
 
-    private List<RssFeed.Item> rssItems;
+    private List<RssFeed> rssFeedList;
+    private Context context;
 
-
-    public ThisAdapter(List<RssFeed.Item> rssItems) {
-        this.rssItems = rssItems;
+    public ThisAdapter(List<RssFeed> rssFeedList) {
+        this.rssFeedList = rssFeedList;
     }
 
     /**
@@ -47,8 +50,8 @@ public class ThisAdapter extends RecyclerView.Adapter<ThisAdapter.ViewHolder>{
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_data, parent, false);
-        return new ViewHolder(inflate);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_data, parent, false);
+        return new ViewHolder(view);
     }
 
     /**
@@ -58,27 +61,44 @@ public class ThisAdapter extends RecyclerView.Adapter<ThisAdapter.ViewHolder>{
      */
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        RssFeed.Item rssItem = rssItems.get(position);
+        RssFeed rssFeed = rssFeedList.get(position);
+
         // 根据rssFeed中的数据设置标题、作者和时间
-        holder.text_title.setText(rssItem.getTitle());
-        // 从rssItem设置作者数据
-        holder.text_author.setText("author");
-//        将获取的时间进行转换
+        holder.text_title.setText(rssFeed.getTitle());
+        holder.text_author.setText("作者"); // 你需要设置正确的作者信息
+
         SimpleDateFormat gmtDateFormat = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.ENGLISH);
         gmtDateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
+
         try {
             // 解析GMT时间字符串为Date对象
-            Date gmtDate = gmtDateFormat.parse(rssItem.getPubDateAsDate());
+            Date gmtDate = gmtDateFormat.parse(rssFeed.getPubDate().toString()); // 将Date对象转换为String
             // 创建一个SimpleDateFormat，用于将时间显示为中国时区的格式
             SimpleDateFormat chinaDateFormat = new SimpleDateFormat("MM月dd日 HH:mm:ss");
-//            设置时区
             chinaDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
             String chinaTime = chinaDateFormat.format(gmtDate);
-            //设置时间
-            holder.text_time.setText("更新时间： "+chinaTime);
+            holder.text_time.setText("更新时间： " + chinaTime);
         } catch (ParseException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+
+        // 在RecyclerView项目点击监听器中
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 获取点击的项目
+                RssFeed clickedItem = rssFeedList.get(holder.getAdapterPosition());
+
+                // 创建一个Intent来启动ReadActivity
+                Intent intent = new Intent(v.getContext(), ReadActivity.class);
+
+                // 将点击的RssFeed对象传递给ReadActivity
+                intent.putExtra("rssFeed", clickedItem);
+
+                // 启动ReadActivity
+                v.getContext().startActivity(intent);
+            }
+        });
 
     }
 
@@ -87,7 +107,7 @@ public class ThisAdapter extends RecyclerView.Adapter<ThisAdapter.ViewHolder>{
      */
     @Override
     public int getItemCount() {
-        return rssItems.size();
+        return rssFeedList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

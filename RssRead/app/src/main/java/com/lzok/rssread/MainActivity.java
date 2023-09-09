@@ -36,11 +36,11 @@ import java.util.List;
  * @author lzok
  */
 public class MainActivity extends AppCompatActivity {
-    MaterialToolbar toolbar;
+    Toolbar toolbar;
     FloatingActionButton floating;
     RssFeed rssFeed = new RssFeed();
-   List<RssFeed.Item> rssFeeds = new ArrayList<>();
-   HtmlDownloader html = new HtmlDownloader();
+   List<RssFeed> rssFeeds = new ArrayList<>();
+
     TextView text_hint;
     AppBarLayout app_bar;
     NestedScrollView nestedScrollView ;
@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
         text_hint = findViewById(R.id.text_hint);
         nestedScrollView = findViewById(R.id.nested_view);
 
-        app_bar = findViewById(R.id.app_bar);
+
+
         floating.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,7 +113,9 @@ public class MainActivity extends AppCompatActivity {
                 // 更新RecyclerView或其他UI组件
                 RecyclerView recyclerView = findViewById(R.id.recycler);
                 recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-                ThisAdapter adapter = new ThisAdapter(rssFeed.getItems());
+                Log.i(TAG, "onPostExecute: "+rssFeed.getItems());
+                ThisAdapter adapter = new ThisAdapter(rssFeed.getItems()); // 使用正确的数据源 rssFeed.getItems()
+
                 recyclerView.setAdapter(adapter);
             } else {
                 // 处理下载失败的情况，例如显示错误消息
