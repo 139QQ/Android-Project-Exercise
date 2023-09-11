@@ -58,8 +58,8 @@ public class HtmlHelper {
                             Drawable drawable = new BitmapDrawable(textView.getResources(), bitmap);
 
                             // 设置图片的宽度和高度
-                            int desiredWidth = drawable.getIntrinsicWidth(); // 你希望的图片宽度
-                            int desiredHeight = drawable.getIntrinsicHeight(); // 你希望的图片高度
+                            int desiredWidth = drawable.getIntrinsicWidth(); 
+                            int desiredHeight = drawable.getIntrinsicHeight(); 
                             drawable.setBounds(0, 0, desiredWidth, desiredHeight);
 
                             return drawable;
@@ -153,7 +153,8 @@ public class HtmlHelper {
                     @Override
                     public void run() {
                         textView.setText(spanned);
-                        textView.setMovementMethod(LinkMovementMethod.getInstance()); // 设置TextView支持超链接点击
+                        // 设置TextView支持超链接点击
+                        textView.setMovementMethod(LinkMovementMethod.getInstance()); 
                     }
                 });
             }
