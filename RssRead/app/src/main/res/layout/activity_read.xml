@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/white"
     tools:context=".ReadActivity">
 
-
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/applaoyut"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
+        android:elevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,20 +19,33 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             style="Widget.Material3.CollapsingToolbar.Medium"
             android:layout_width="match_parent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-            android:layout_height="?attr/collapsingToolbarLayoutLargeSize">
+            android:layout_height="?attr/collapsingToolbarLayoutMediumSize"
+
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/ma_toolbar"
+                android:id="@+id/material_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
-                app:title="biaoti"
+                android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                android:elevation="0dp" />
-
+                app:title="ddd"
+                android:elevation="4dp"/>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
-
     </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
 
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- 在这里放置 NestedScrollView 的内容 -->
+     <TextView
+         android:id="@+id/desp_text"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_margin="8dp"
+         android:layout_marginBottom="16dp"
+         android:textSize="16sp"/>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
