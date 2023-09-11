@@ -11,12 +11,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 /**
  * @author lzok
@@ -66,9 +62,8 @@ public class HtmlDownloader {
             rssFeed.setLanguage(channelElement.select("language").text());
             rssFeed.setLastBuildDate(channelElement.select("lastBuildDate").text());
 
-
-
         }
+
 
         Elements itemElements = document.select("item");
         List<RssFeed> rssItems = new ArrayList<>();
@@ -77,11 +72,6 @@ public class HtmlDownloader {
             item.setTitle(itemElement.select("title").text());
             item.setDescription(itemElement.select("description").text());
             item.setPubDate(itemElement.select("pubDate").text());
-            // 提取图片（如果有的话）
-            Element itemImageElement = itemElement.select("image").first();
-            if (itemImageElement != null) {
-                item.setImage(itemImageElement.select("url").text());
-            }
 
             item.setLink(itemElement.select("link").text());
             rssItems.add(item);
