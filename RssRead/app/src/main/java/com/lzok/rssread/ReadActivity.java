@@ -1,30 +1,31 @@
 package com.lzok.rssread;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.google.android.material.appbar.MaterialToolbar;
 import com.lzok.rssread.Data.RssFeed;
-import com.lzok.rssread.Util.HtmlDownloader;
+import com.lzok.rssread.Util.HtmlHelper;
+
 
 public class ReadActivity extends AppCompatActivity {
+
+
     MaterialToolbar title;
     RssFeed rssFeed;
+    TextView dest;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read);
-        title = findViewById(R.id.ma_toolbar);
+        title = findViewById(R.id.material_toolbar);
 
+        dest =findViewById(R.id.desp_text);
         // 在主线程中获取传递的RssFeed
         Intent intent = getIntent();
         rssFeed = (RssFeed) intent.getSerializableExtra("rssFeed");
@@ -45,7 +46,19 @@ public class ReadActivity extends AppCompatActivity {
             if (rssFeed != null) {
                 String description = rssFeed.getTitle();
                 title.setTitle(description);
+                // 在后台线程中加载图像
+                HtmlHelper.loadHtmlContent(dest,rssFeed.getDescription());
+
             }
+
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+    }
+
+
 }
