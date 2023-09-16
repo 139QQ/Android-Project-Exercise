@@ -1,51 +1,67 @@
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                app:layout_collapseMode="pin"
-                app:navigationIcon="@drawable/navigation_icon">
-
-            </androidx.appcompat.widget.Toolbar>
-
-
-
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nested_view"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:visibility="gone">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="56dp"
+            app:layout_collapseMode="pin"
+            app:navigationIcon="@drawable/navigation_icon">
 
-        </androidx.recyclerview.widget.RecyclerView>
+        </androidx.appcompat.widget.Toolbar>
 
-    </androidx.core.widget.NestedScrollView>
 
-    <TextView
-        android:id="@+id/text_hint"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text = "前添加连接"
-        />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="100dp"
-        android:layout_marginRight="32dp"
-        app:srcCompat="@drawable/add"/>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:visibility="gone">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/text_hint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text = "@string/text_hint"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="100dp"
+            android:layout_marginRight="32dp"
+            app:srcCompat="@drawable/add"
+            android:contentDescription="TODO" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+   <androidx.coordinatorlayout.widget.CoordinatorLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@color/white"
+       android:layout_gravity="left">
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:text="频道"
+      android:gravity="center"/>
+   </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.drawerlayout.widget.DrawerLayout >

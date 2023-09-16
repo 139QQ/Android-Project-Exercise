@@ -16,6 +16,8 @@ import android.text.style.URLSpan;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import org.xml.sax.XMLReader;
 
 import java.io.IOException;
@@ -85,7 +87,7 @@ public class HtmlHelper {
                                 final int len = output.length();
                                 output.setSpan(new ClickableSpan() {
                                     @Override
-                                    public void onClick(View widget) {
+                                    public void onClick(@NonNull View widget) {
                                         // 处理超链接的点击事件
                                         if (href != null) {
                                             // 打开链接
@@ -115,9 +117,11 @@ public class HtmlHelper {
                             Field elementField = xmlReader.getClass().getDeclaredField("theNewElement");
                             elementField.setAccessible(true);
                             Object element = elementField.get(xmlReader);
+                            assert element != null;
                             Field attsField = element.getClass().getDeclaredField("theAtts");
                             attsField.setAccessible(true);
                             Object atts = attsField.get(element);
+                            assert atts != null;
                             Method getValueMethod = atts.getClass().getMethod("getValue", String.class);
                             Method getLengthMethod = atts.getClass().getMethod("getLength");
                             int len = (int) getLengthMethod.invoke(atts);
