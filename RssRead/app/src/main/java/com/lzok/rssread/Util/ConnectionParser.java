@@ -33,7 +33,6 @@ public class ConnectionParser {
             @Override
             public String call() throws Exception {
                 // 在这里进行连接解析
-                // 如果解析成功，返回连接
                 return url;
             }
         };
@@ -51,8 +50,8 @@ public class ConnectionParser {
             // 任务执行出错
             listener.onConnectionTimeout();
         } catch (TimeoutException e) {
-            // 超时
-            future.cancel(true); // 取消任务
+            // 超时 取消任务
+            future.cancel(true);
             listener.onConnectionTimeout();
         } finally {
             executor.shutdownNow(); // 关闭线程池
