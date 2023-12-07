@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">RssRead</string>
+    <string name="textContent">
+Claude
+应用  下午 3:31
+根据你的进一步描述,这个问题是AppBarLayout遮挡了NestedScrollView,我理解了。
+要解决这个遮挡问题,可以从以下几个方面调整:
+1. 在NestedScrollView外层再嵌套一个普通的Vertical LinearLayout,并给这个Layout设置一个合适的高度,例如match_parent。
+2. 调整AppBarLayout的高度为wrap_content,避免其高度过大。
+3. 在NestedScrollView上添加paddingTop,值为AppBarLayout的高度,这可以预留空间不被遮挡。
+4. 在AppBarLayout上设置app:liftOnScroll="true",这样它可以在滚动时抬起,不遮挡内容。
+5. 在CollapsingToolbarLayout上适当调整layout_scrollFlags标志,例如去掉snap标志。
+6. 尝试用ConstraintLayout作为外层布局,调整各视图的约束条件。
+7. 测试滑动时的滚动效果是否正常,逐步修改相关属性至理想状态。
+8. 视情况添加状态栏占位View避免内容越过状态栏。
+通过上述调整,可以实现AppBarLayout和NestedScrollView不互相遮挡,平滑滚动。需要合理安排布局层级和空间,细致调节各属性参数。 （已编辑）
+    Claude
+应用  下午 3:31
+根据你的进一步描述,这个问题是AppBarLayout遮挡了NestedScrollView,我理解了。
+要解决这个遮挡问题,可以从以下几个方面调整:
+1. 在NestedScrollView外层再嵌套一个普通的Vertical LinearLayout,并给这个Layout设置一个合适的高度,例如match_parent。
+2. 调整AppBarLayout的高度为wrap_content,避免其高度过大。
+3. 在NestedScrollView上添加paddingTop,值为AppBarLayout的高度,这可以预留空间不被遮挡。
+4. 在AppBarLayout上设置app:liftOnScroll="true",这样它可以在滚动时抬起,不遮挡内容。
+5. 在CollapsingToolbarLayout上适当调整layout_scrollFlags标志,例如去掉snap标志。
+6. 尝试用ConstraintLayout作为外层布局,调整各视图的约束条件。
+7. 测试滑动时的滚动效果是否正常,逐步修改相关属性至理想状态。
+8. 视情况添加状态栏占位View避免内容越过状态栏。
+通过上述调整,可以实现AppBarLayout和NestedScrollView不互相遮挡,平滑滚动。需要合理安排布局层级和空间,细致调节各属性参数。 （已编辑）</string>
+    <string name="url_hit">请输入连接</string>
+    <string name="text_hint">请添点击+号添加连接....</string>
+    <string name="add_channle">添加频道</string>
+</resources>
