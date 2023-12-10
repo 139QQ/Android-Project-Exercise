@@ -2,4 +2,10 @@
 <resources>
 
     <style name="Theme.ReadMate" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.ReadMate.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.ReadMate.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.ReadMate.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

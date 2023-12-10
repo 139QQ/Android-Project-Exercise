@@ -1,6 +1,7 @@
 package com.lzok.readmate
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
@@ -17,12 +18,14 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import com.lzok.readmate.network.RssHubparse
 import com.lzok.readmate.ui.theme.ReadMateTheme
 import com.lzok.readmate.item.NewsListItem
 import com.lzok.readmate.item.NewsListItemContent
-import com.lzok.readmate.view.news.Read
+import com.lzok.readmate.view.news.ui.theme.Read
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,23 +37,32 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+}
 
-    /**
-     * 跳转到Read页面
-     */
-    @Composable
-    private fun JumpRead() {
-        val navController = rememberNavController() // 初始化 NavController 对象
-        NavHost(navController = navController, startDestination = "main") {
-            // 定义应用程序的导航图
-            composable("main") {
-                MyScreen(navController)
-            }
-            composable("read") {
-                Read()
+/**
+ * 跳转到Read页面
+ */
+@Composable
+private fun JumpRead() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "main") {
+        composable("main") {
+            MyScreen(navController)
+        }
+        navigation(
+            startDestination = "read/{title}/{content}",
+            route = "read_nav_graph"
+        ) {
+            composable("read/{title}/{content}") { backStackEntry ->
+                val title = backStackEntry.arguments?.getString("title")
+                val content = backStackEntry.arguments?.getString("content")
+                if (title != null && content != null) {
+                    Read(title, content)
+                }
             }
         }
     }
+
 }
 
 /*
@@ -71,13 +83,15 @@ fun MyScreen(navController: NavController) {
     MainScreen(newsItems, navController)
 }
 
-/*用于显示新闻列表*/
+/**用于显示新闻列表*/
 @Composable
 fun NewsList(newsList: List<NewsListItem>, navController: NavController) {
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(newsList) { news ->
             NewsListItemContent(news) {
-                navController.navigate("read")
+                navController.navigate("read/${news.title}/${news.content}")
+                val TAG = "NewsList"
+                Log.i(TAG, "NewsList: ${news.title}")
 
             }
         }

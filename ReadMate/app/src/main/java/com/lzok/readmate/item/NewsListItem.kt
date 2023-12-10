@@ -26,10 +26,10 @@ import com.lzok.readmate.R
  * @descriptive 它包含了新闻项的标题、作者、发布日期和内容。
  */
 data class NewsListItem(
-    val title: String,
-    val author: String,
-    val pubDate: String,
-    val content: String
+    var title: String,
+    var author: String,
+    var pubDate: String,
+    var content: String
 )
 
 

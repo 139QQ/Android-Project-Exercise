@@ -6,8 +6,12 @@ import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
+import org.jsoup.Jsoup
 import org.w3c.dom.Element
 import org.xml.sax.InputSource
+import org.xmlpull.v1.XmlPullParser
+import org.xmlpull.v1.XmlPullParserFactory
+import java.io.StringReader
 import java.util.concurrent.TimeUnit
 import javax.xml.parsers.DocumentBuilderFactory
 
@@ -27,47 +31,48 @@ class RssHubparse {
         val xmlString: String? = response.body?.string()
 
         if (xmlString != null) {
-            parseXmlString(xmlString)// 调用解析 XML 字符串的函数
+            parseXmlString(xmlString)
         } else {
             emptyList()
         }
     }
+
     // 解析 XML 字符串
     private fun parseXmlString(xmlString: String): List<NewsListItem> {
-        val documentBuilderFactory = DocumentBuilderFactory.newInstance()
-        val documentBuilder = documentBuilderFactory.newDocumentBuilder()
-        val inputSource = InputSource(xmlString.reader())
-        val document = documentBuilder.parse(inputSource)
-        document.documentElement.normalize()
-
-        val items = document.getElementsByTagName("item")
         val newsItems = mutableListOf<NewsListItem>()
 
-        for (i in 0 until items.length) {
-            val itemNode = items.item(i) as Element
+        val factory = XmlPullParserFactory.newInstance()
+        val parser = factory.newPullParser()
+        parser.setInput(StringReader(xmlString))
 
-            val titleNode = itemNode.getElementsByTagName("title").item(0)
-            val title = titleNode?.textContent
+        var eventType = parser.eventType
+        var newsItem: NewsListItem? = null
 
-            val authorNode = itemNode.getElementsByTagName("author").item(0)
-            val author = authorNode?.textContent
-
-            val pubDateNode = itemNode.getElementsByTagName("pubDate").item(0)
-            val pubDate = pubDateNode?.textContent
-
-            val contentNode = itemNode.getElementsByTagName("description").item(0)
-            val content = contentNode?.textContent
-
-            val newsItem = NewsListItem(
-                title = title ?: "",
-                author = author ?: "",
-                pubDate = pubDate ?: "",
-                content = content ?: ""
-            )
-            newsItems.add(newsItem)
+        while (eventType != XmlPullParser.END_DOCUMENT) {
+            when (eventType) {
+                XmlPullParser.START_TAG -> {
+                    if (parser.name == "item") {
+                        newsItem = NewsListItem("", "", "", "")
+                    } else if (newsItem != null) {
+                        when (parser.name) {
+                            "title" -> newsItem.title = parser.nextText()
+                            "author" -> newsItem.author = parser.nextText()
+                            "pubDate" -> newsItem.pubDate = parser.nextText()
+                            "description" -> newsItem.content = parser.nextText()
+                        }
+                    }
+                }
+                XmlPullParser.END_TAG -> {
+                    if (parser.name == "item" && newsItem != null) {
+                        newsItems.add(newsItem)
+                        newsItem = null
+                    }
+                }
+            }
+            eventType = parser.next()
         }
-
 
         return newsItems
     }
 }
+
