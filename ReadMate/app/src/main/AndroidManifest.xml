@@ -15,6 +15,16 @@
         android:theme="@style/Theme.ReadMate"
         tools:targetApi="31" >
         <activity
+            android:name=".view.news.ui.theme.Read"
+            android:exported="false"
+            android:label="@string/title_activity_read"
+            android:theme="@style/Theme.ReadMate" />
+        <activity
+            android:name=".Read"
+            android:exported="false"
+            android:label="@string/title_activity_read"
+            android:theme="@style/Theme.ReadMate.NoActionBar" />
+        <activity
             android:name=".view.news.Read"
             android:exported="false"
             android:label="@string/title_activity_read"
