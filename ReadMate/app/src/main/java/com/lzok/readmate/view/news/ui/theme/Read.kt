@@ -43,7 +43,7 @@ fun Read(title: String, content: String) {
 
 
         val TAG = "Read"
-        Log.i(TAG, "Read: ${content}")
+        Log.i(TAG, "Read: $content")
 
     }
 
@@ -59,9 +59,7 @@ private fun WebViewComponent(content: String) {
             WebView(context).apply {
                 settings.loadsImagesAutomatically = true
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    settings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
-                }
+                settings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
 
                 layoutParams = ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
