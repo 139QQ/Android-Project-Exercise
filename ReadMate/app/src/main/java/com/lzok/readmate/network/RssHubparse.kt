@@ -36,43 +36,45 @@ class RssHubparse {
             emptyList()
         }
     }
+}
 
-    // 解析 XML 字符串
-    private fun parseXmlString(xmlString: String): List<NewsListItem> {
-        val newsItems = mutableListOf<NewsListItem>()
+// 解析 XML 字符串
+private fun parseXmlString(xmlString: String): List<NewsListItem> {
+    val newsItems = mutableListOf<NewsListItem>()
 
-        val factory = XmlPullParserFactory.newInstance()
-        val parser = factory.newPullParser()
-        parser.setInput(StringReader(xmlString))
+    val factory = XmlPullParserFactory.newInstance()
+    val parser = factory.newPullParser()
+    parser.setInput(StringReader(xmlString))
 
-        var eventType = parser.eventType
-        var newsItem: NewsListItem? = null
+    var eventType = parser.eventType
+    var newsItem: NewsListItem? = null
 
-        while (eventType != XmlPullParser.END_DOCUMENT) {
-            when (eventType) {
-                XmlPullParser.START_TAG -> {
-                    if (parser.name == "item") {
-                        newsItem = NewsListItem("", "", "", "")
-                    } else if (newsItem != null) {
-                        when (parser.name) {
-                            "title" -> newsItem.title = parser.nextText()
-                            "author" -> newsItem.author = parser.nextText()
-                            "pubDate" -> newsItem.pubDate = parser.nextText()
-                            "description" -> newsItem.content = parser.nextText()
-                        }
-                    }
-                }
-                XmlPullParser.END_TAG -> {
-                    if (parser.name == "item" && newsItem != null) {
-                        newsItems.add(newsItem)
-                        newsItem = null
+    while (eventType != XmlPullParser.END_DOCUMENT) {
+        when (eventType) {
+            XmlPullParser.START_TAG -> {
+                if (parser.name == "item") {
+                    newsItem = NewsListItem("", "", "", "")
+                } else if (newsItem != null) {
+                    when (parser.name) {
+                        "title" -> newsItem.title = parser.nextText()
+                        "author" -> newsItem.author = parser.nextText()
+                        "pubDate" -> newsItem.pubDate = parser.nextText()
+                        "description" -> newsItem.content = parser.nextText()
                     }
                 }
             }
-            eventType = parser.next()
-        }
 
-        return newsItems
+            XmlPullParser.END_TAG -> {
+                if (parser.name == "item" && newsItem != null) {
+                    newsItems.add(newsItem)
+                    newsItem = null
+                }
+            }
+        }
+        eventType = parser.next()
     }
+
+    return newsItems
 }
+
 

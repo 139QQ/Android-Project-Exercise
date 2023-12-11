@@ -72,7 +72,7 @@ private fun JumpRead() {
 @Composable
 fun MyScreen(navController: NavController) {
     val rssHubparse = RssHubparse()
-    val rssUrl = "https://rsshub.rssforever.com/36kr/information/web_news" // 替换为你的 RSS 订阅源链接
+    val rssUrl = "https://rsshub.rssforever.com/36kr/hot-list" // 替换为你的 RSS 订阅源链接
     var newsItems by remember { mutableStateOf<List<NewsListItem>>(emptyList()) }
 
     LaunchedEffect(Unit) {
