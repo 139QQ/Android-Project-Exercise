@@ -25,6 +25,8 @@ import com.lzok.readmate.ui.theme.ReadMateTheme
 import com.lzok.readmate.item.NewsListItem
 import com.lzok.readmate.item.NewsListItemContent
 import com.lzok.readmate.view.news.ui.theme.Read
+import java.net.URLEncoder
+import java.nio.charset.StandardCharsets
 
 
 class MainActivity : ComponentActivity() {
@@ -72,7 +74,7 @@ private fun JumpRead() {
 @Composable
 fun MyScreen(navController: NavController) {
     val rssHubparse = RssHubparse()
-    val rssUrl = "https://rsshub.rssforever.com/36kr/hot-list" // 替换为你的 RSS 订阅源链接
+    val rssUrl = "https://rsshub.rssforever.com/36kr/motif/452" // 替换为你的 RSS 订阅源链接
     var newsItems by remember { mutableStateOf<List<NewsListItem>>(emptyList()) }
 
     LaunchedEffect(Unit) {
@@ -89,9 +91,11 @@ fun NewsList(newsList: List<NewsListItem>, navController: NavController) {
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(newsList) { news ->
             NewsListItemContent(news) {
-                navController.navigate("read/${news.title}/${news.content}")
+                val encodedTitle = URLEncoder.encode(news.title, StandardCharsets.UTF_8.toString())
+                val encodedContent = URLEncoder.encode(news.content, StandardCharsets.UTF_8.toString())
+                navController.navigate("read/${encodedTitle}/${encodedContent}")
                 val TAG = "NewsList"
-                Log.i(TAG, "NewsList: ${news.title}")
+                Log.i(TAG, "NewsList: ${encodedContent}")
 
             }
         }

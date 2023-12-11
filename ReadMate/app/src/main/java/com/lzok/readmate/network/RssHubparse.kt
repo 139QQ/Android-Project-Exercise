@@ -6,14 +6,10 @@ import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
-import org.jsoup.Jsoup
-import org.w3c.dom.Element
-import org.xml.sax.InputSource
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory
 import java.io.StringReader
 import java.util.concurrent.TimeUnit
-import javax.xml.parsers.DocumentBuilderFactory
 
 class RssHubparse {
     // 解析 RSS Feed
@@ -60,6 +56,8 @@ private fun parseXmlString(xmlString: String): List<NewsListItem> {
                         "author" -> newsItem.author = parser.nextText()
                         "pubDate" -> newsItem.pubDate = parser.nextText()
                         "description" -> newsItem.content = parser.nextText()
+
+
                     }
                 }
             }
