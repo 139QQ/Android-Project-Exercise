@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+
 }
 
 android {
@@ -27,11 +28,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
     buildFeatures {
         compose true
@@ -83,5 +84,11 @@ dependencies {
     implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.11.0'
 // Kotlin Coroutines 用于在Android应用中进行异步编程和简化并发操作的轻量级框架。
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0-RC")
+// room
+    def room_version = "2.6.1"
+    apply plugin: 'kotlin-kapt'
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
 
 }
