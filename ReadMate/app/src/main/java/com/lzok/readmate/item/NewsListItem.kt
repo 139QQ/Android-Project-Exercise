@@ -16,15 +16,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 
 /**
+ *  数据实体
  * @author lzok
  * @descriptive 它包含了新闻项的标题、作者、发布日期和内容。
  */
+@Entity
 data class NewsListItem(
-    var title: String,
+   @PrimaryKey var title: String,
     var author: String,
     var pubDate: String,
     var content: String
@@ -37,12 +40,12 @@ data class NewsListItem(
  * @param onItemClicked 点击item跳转
  */
 @Composable
-fun NewsListItemContent(newsItem: NewsListItem,onItemClicked: (NewsListItem) -> Unit) {
+fun NewsListItemContent(newsItem: NewsListItem, onItemClicked: (NewsListItem) -> Unit) {
     Column(modifier = Modifier
         .padding(16.dp)
         .clickable { onItemClicked(newsItem) }
     ) {
-        Row (){
+        Row() {
 //            Image(
 //                painter = painterResource(R.drawable.news_image),
 //                contentDescription = "News Image",
@@ -76,14 +79,14 @@ fun NewsListItemContent(newsItem: NewsListItem,onItemClicked: (NewsListItem) -> 
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
-                Spacer(modifier = Modifier.height(4.dp))
+//                Spacer(modifier = Modifier.height(4.dp))
 
-                Text(
-                    text = newsItem.content,
-                    style = MaterialTheme.typography.bodyLarge,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
+//                Text(
+//                    text = newsItem.content,
+//                    style = MaterialTheme.typography.bodyLarge,
+//                    maxLines = 1,
+//                    overflow = TextOverflow.Ellipsis
+//                )
             }
         }
         Divider()
