@@ -1,4 +1,4 @@
-package com.lzok.readmate.view.news.ui.theme
+package com.lzok.readmate.ui.theme
 
 
 import android.os.Build
@@ -15,6 +15,8 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -40,11 +42,9 @@ fun Read(title: String, content: String) {
                 .wrapContentHeight()
         )
         WebViewComponent(content)
-
-
+        Log.d("content", content)
         val TAG = "Read"
         Log.i(TAG, "Read: $content")
-
     }
 
 }
@@ -54,29 +54,56 @@ fun Read(title: String, content: String) {
  */
 @Composable
 private fun WebViewComponent(content: String) {
+    // 使用 rememberUpdatedState 来保存传递给它的值，确保在值变化时更新
+    val rememberedContent by rememberUpdatedState(content)
+
     AndroidView(
         factory = { context ->
             WebView(context).apply {
-                settings.loadsImagesAutomatically = true
+                Log.d("context",content)
+                // WebView 设置
+                settings.apply {
+                    loadsImagesAutomatically = true
+                    mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+                    javaScriptEnabled = true
+                    // 允许使用 localStorage 和 sessionStorage
+                    domStorageEnabled = true
+                    // 允许缩放
+                    setSupportZoom(true)
+                    builtInZoomControls = true
+                    displayZoomControls = false
 
-                settings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
 
+                    blockNetworkImage = false
+
+                    loadsImagesAutomatically = true
+                    // 针对 Android 21 及以上的版本启用混合内容模式
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        mixedContentMode = WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE
+                    }
+                }
+
+                // 布局参数设置
                 layoutParams = ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT
                 )
 
-                settings.javaScriptEnabled = true
-
-                loadDataWithBaseURL(null, content, "text/html", "utf-8", null)
+                // 加载数据到 WebView
+                loadData(rememberedContent, "text/html", "utf-8")
             }
         },
+
         update = { webView ->
-            webView.loadDataWithBaseURL(null, content, "text/html", "utf-8", null)
+            // 当内容变化时，更新 WebView
+            webView.loadData(rememberedContent, "text/html", "utf-8")
         },
         modifier = Modifier
             .fillMaxWidth()
             .verticalScroll(rememberScrollState())
     )
 }
+
+
+
 
