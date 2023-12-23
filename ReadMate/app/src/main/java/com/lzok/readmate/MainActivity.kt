@@ -1,38 +1,58 @@
 package com.lzok.readmate
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.ViewGroup
+import android.webkit.WebSettings
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material3.Button
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -140,19 +160,19 @@ fun NewsList(newsList: List<NewsListItem>, navController: NavController) {
                 }
             }
         }
-
         // AddButton 将显示在 LazyColumn 之上
         AddButton(isVisible = state.firstVisibleItemIndex == 0)
     }
 }
 
 @Composable
-fun AddButton(isVisible: Boolean) {
+fun AddButton(isVisible: Boolean, ) {
+    val context = LocalContext.current
     // 打印 FloatingActionButton 的可见状态
     if (isVisible) {
         // 显示 FloatingActionButton，位于屏幕右下角
         FloatingActionButton(
-            onClick = { /* TODO */ },
+            onClick = { Toast.makeText( context,"添加",Toast.LENGTH_LONG).show() },
             modifier = Modifier
                 .padding(16.dp)
                 .layout { measurable, constraints ->
@@ -161,11 +181,15 @@ fun AddButton(isVisible: Boolean) {
                         placeable.place(
                             constraints.maxWidth - placeable.width,
                             constraints.maxHeight - placeable.height
+
                         )
                     }
                 }
+                .height(56.dp)
+                .width(56.dp)
+
         ) {
-            Icons.Default.Add
+            Icon(Icons.Filled.Add, contentDescription = "添加",Modifier.size(24.dp))
         }
     }
 }
@@ -180,5 +204,4 @@ fun MainScreen(newsList: List<NewsListItem>, navController: NavController) {
         NewsList(newsList, navController)
     }
 }
-
 
