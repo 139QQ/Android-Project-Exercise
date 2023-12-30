@@ -1,14 +1,19 @@
 package com.lzok.readmate.ui.theme
 
 
+import android.graphics.Bitmap
 import android.os.Build
 import android.util.Log
 import android.view.ViewGroup
+import android.webkit.WebChromeClient
+import android.webkit.WebResourceRequest
+import android.webkit.WebResourceResponse
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.rememberScrollState
@@ -19,12 +24,17 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.viewinterop.AndroidView
+import java.io.ByteArrayInputStream
 
 
 @Composable
@@ -40,7 +50,7 @@ fun Read(title: String, content: String) {
                     overflow = TextOverflow.Ellipsis,
                     maxLines = 1,
 
-                )
+                    )
             },
 
             // 设置背景颜色
@@ -49,7 +59,8 @@ fun Read(title: String, content: String) {
                 .wrapContentHeight(),
 
 
-        )
+            )
+        Log.d("contents","$content")
         WebViewComponent(content)
     }
 
@@ -59,58 +70,60 @@ fun Read(title: String, content: String) {
  * Web页面
  */
 @Composable
-private fun WebViewComponent(content: String) {
-    // 使用 rememberUpdatedState 来保存传递给它的值，确保在值变化时更新
-    val rememberedContent by rememberUpdatedState(content)
+fun WebViewComponent(content: String) {
+    val webViewState = rememberUpdatedState(content)
 
     AndroidView(
         factory = { context ->
             WebView(context).apply {
-                Log.d("context",content)
-                // WebView 设置
                 settings.apply {
-                    loadsImagesAutomatically = true
-                    mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
                     javaScriptEnabled = true
-                    // 允许使用 localStorage 和 sessionStorage
-                    domStorageEnabled = true
-                    // 允许缩放
-                    setSupportZoom(true)
-                    builtInZoomControls = true
-                    displayZoomControls = false
-
-
+                    loadWithOverviewMode = true
                     blockNetworkImage = false
+                    allowContentAccess = true
 
-                    loadsImagesAutomatically = true
-                    // 针对 Android 21 及以上的版本启用混合内容模式
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        mixedContentMode = WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE
+                }
+                webChromeClient = object : WebChromeClient() {
+                    override fun onProgressChanged(view: WebView?, newProgress: Int) {
+                        super.onProgressChanged(view, newProgress)
+                        Log.d("WebViewComponent", "Loading progress: $newProgress%")
                     }
                 }
 
-                // 布局参数设置
-                layoutParams = ViewGroup.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT
-                )
-                webViewClient  = WebViewClient()
-                loadUrl("https://rsshub.rssforever.com/36kr/motif/452")
-                // 加载数据到 WebView
-                loadData(rememberedContent, "text/html", "utf-8")
-            }
-        },
+                webViewClient = object : WebViewClient() {
+                    override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                        super.onPageStarted(view, url, favicon)
+                        Log.d("WebViewComponent", "Page started loading. URL: $url")
+                    }
 
-        update = { webView ->
-            // 当内容变化时，更新 WebView
-            webView.loadData(rememberedContent, "text/html", "utf-8")
+                    override fun onPageFinished(view: WebView?, url: String?) {
+                        super.onPageFinished(view, url)
+                        Log.d("WebViewComponent", "Page finished loading. URL: $url")
+                    }
+
+                    override fun shouldInterceptRequest(
+                        view: WebView?,
+                        request: WebResourceRequest?
+                    ): WebResourceResponse? {
+                        Log.d("WebViewComponent", "Intercepting request: ${request?.url}")
+                        return super.shouldInterceptRequest(view, request)
+                    }
+
+                }
+
+                // 在加载数据之前进行判断
+                    // 加载数据到 WebView
+                    loadDataWithBaseURL(
+                        null,
+                        webViewState.value,
+                        "text/html",
+                        "utf-8",
+                        null
+                    )
+            }
         },
         modifier = Modifier
             .fillMaxWidth()
-            .verticalScroll(rememberScrollState())
     )
 }
-
-
-
 

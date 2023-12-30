@@ -1,5 +1,6 @@
 package com.lzok.readmate.item
 
+import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,8 +17,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 
 
 /**
@@ -25,14 +24,26 @@ import androidx.room.PrimaryKey
  * @author lzok
  * @descriptive 它包含了新闻项的标题、作者、发布日期和内容。
  */
-@Entity
 data class NewsListItem(
-   @PrimaryKey var title: String,
+    var title: String,
     var author: String,
     var pubDate: String,
-    var content: String
+    var content: String,
+    var link: String,
+    var channel: String,
+    var ChannelTitle: String,
+//    频道内容上次改变的时间
+    val lastBuildDate: String
 )
 
+data class Channel(
+    var channel: String,
+    var ChannelTitle: String,
+    var link: String,
+//    频道内容上次改变的时间
+    val lastBuildDate: String
+
+)
 
 /**
  * 列表的item
@@ -53,6 +64,7 @@ fun NewsListItemContent(newsItem: NewsListItem, onItemClicked: (NewsListItem) ->
 //            )
             Spacer(modifier = Modifier.width(16.dp))
             Column(modifier = Modifier.weight(1f)) {
+
                 Text(
                     text = newsItem.title,
                     style = MaterialTheme.typography.titleSmall.copy(
@@ -79,14 +91,15 @@ fun NewsListItemContent(newsItem: NewsListItem, onItemClicked: (NewsListItem) ->
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
-//                Spacer(modifier = Modifier.height(4.dp))
+                Spacer(modifier = Modifier.height(4.dp))
 
-//                Text(
-//                    text = newsItem.content,
-//                    style = MaterialTheme.typography.bodyLarge,
-//                    maxLines = 1,
-//                    overflow = TextOverflow.Ellipsis
-//                )
+                Text(
+                    text = newsItem.link,
+                    style = MaterialTheme.typography.bodyLarge,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+                Log.i("TAG", "${newsItem.title} ")
             }
         }
         Divider()

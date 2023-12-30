@@ -1,18 +1,14 @@
 package com.lzok.readmate
 
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.ViewGroup
-import android.webkit.WebSettings
 import android.webkit.WebView
-import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -22,34 +18,26 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Divider
 import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
-import androidx.compose.runtime.snapshotFlow
+import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.focus.focusModifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -58,15 +46,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
-import androidx.room.Room
-import androidx.room.RoomDatabase
-import androidx.sqlite.db.SupportSQLiteDatabase
-import com.lzok.readmate.DataBase.RssHub
 import com.lzok.readmate.network.RssHubparse
 import com.lzok.readmate.ui.theme.ReadMateTheme
 import com.lzok.readmate.item.NewsListItem
 import com.lzok.readmate.item.NewsListItemContent
 import com.lzok.readmate.ui.theme.Read
+import com.prof18.rssparser.RssParser
+import com.prof18.rssparser.model.RssChannel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
 
@@ -118,7 +106,6 @@ private fun JumpRead() {
 @Composable
 fun MyScreen(navController: NavController) {
     val rssHubparse = RssHubparse()
-
     val rssUrl = "https://rsshub.rssforever.com/36kr/motif/452" // 替换为你的 RSS 订阅源链接
     // item 状态
     var newsItems by rememberSaveable { mutableStateOf<List<NewsListItem>>(emptyList()) }
@@ -128,7 +115,6 @@ fun MyScreen(navController: NavController) {
     LaunchedEffect(Unit) {
         val items = rssHubparse.parseRssFeed(rssUrl)
         newsItems = items
-
     }
 
     MainScreen(newsItems, navController)
@@ -166,13 +152,13 @@ fun NewsList(newsList: List<NewsListItem>, navController: NavController) {
 }
 
 @Composable
-fun AddButton(isVisible: Boolean, ) {
+fun AddButton(isVisible: Boolean) {
     val context = LocalContext.current
     // 打印 FloatingActionButton 的可见状态
     if (isVisible) {
         // 显示 FloatingActionButton，位于屏幕右下角
         FloatingActionButton(
-            onClick = { Toast.makeText( context,"添加",Toast.LENGTH_LONG).show() },
+            onClick = { Toast.makeText(context, "添加", Toast.LENGTH_LONG).show() },
             modifier = Modifier
                 .padding(16.dp)
                 .layout { measurable, constraints ->
@@ -189,7 +175,7 @@ fun AddButton(isVisible: Boolean, ) {
                 .width(56.dp)
 
         ) {
-            Icon(Icons.Filled.Add, contentDescription = "添加",Modifier.size(24.dp))
+            Icon(Icons.Filled.Add, contentDescription = "添加", Modifier.size(24.dp))
         }
     }
 }
@@ -205,3 +191,50 @@ fun MainScreen(newsList: List<NewsListItem>, navController: NavController) {
     }
 }
 
+val rssParser: RssParser = RssParser()
+
+@Composable
+fun RssTest() {
+    val rssChannelState = remember { mutableStateOf<RssChannel?>(null) }
+
+    LaunchedEffect(Unit) {
+        try {
+            val rssChannel: RssChannel? = withContext(Dispatchers.IO) {
+                rssParser.getRssChannel("https://rsshub.rssforever.com/36kr/motif/452")
+            }
+
+            // 更新状态
+            rssChannelState.value = rssChannel
+        } catch (e: Exception) {
+            // 处理异常
+        }
+    }
+
+    // 在 Compose 中使用 rssChannelState.value
+    val rssChannel = rssChannelState.value
+
+    // 在这里可以根据 rssChannel 的值进行相应的UI操作
+    rssChannel?.let {
+        // 如果 rssChannel 不为 null，执行相应的操作，例如显示数据
+        Column {
+//            Text("Channel Title: ${it.channelTitle}")
+            Text("Last Build Date: ${it.lastBuildDate}")
+
+            // 遍历并显示每个 item
+            it.items.forEach { item ->
+                Text("Title: ${item.title}")
+                Text("Author: ${item.author}")
+                Text("Pub Date: ${item.pubDate}")
+                // 其他项的显示方式
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+        }
+    }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun WebViewPreview() {
+    RssTest()
+}
